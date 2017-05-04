@@ -1,0 +1,27 @@
+.sidebar {
+    box-sizing: border-box;
+    padding: 150px 20px 30px;
+    display: block;
+    background-color: $grey-7;
+
+    &__heading {
+        display: block;
+    }
+
+    &__logo {
+        display: block;
+        text-align: center;
+    }
+
+    &__logo + &__title {
+        margin-top: 20px;
+    }
+
+    &__title {
+        text-align: center;
+        color: $grey-1;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+    }
+}

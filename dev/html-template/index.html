@@ -12,19 +12,109 @@
 <body>
 <!-- include svg sprite-->
 <div id="svg-icon-placeloholder"></div>
-<script>if (window.svgsprite) { document.getElementById('svg-icon-placeholder').innerHTML = svgsprite; }</script>
+<script>if (window.svgsprite) {
+    document.getElementById('svg-icon-placeholder').innerHTML = svgsprite;
+}</script>
 
 
-    <div class="main-page">
-        <aside class="main-page__sidebar sidebar">
+<div class="main-page">
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="main-page__sidebar sidebar col-xs-12 col-sm-4 col-md-4 col-lg-2">
+                <div class="sidebar__content">
+                    <div class="sidebar__heading">
+                        <a class="sidebar__logo" href="#">
+                            <img src="../img/logo.png" alt="Логотип Приборостроительного факультета">
+                        </a>
+                        <h2 class="sidebar__title">Приборостроительный факультет</h2>
+                    </div>
+                    <ul class="sidebar__menu-list main-sidebar-lists">
+                        <li class="main-sidebar-lists__item">
+                            <p class="main-sidebar-lists__title">Подразделения</p>
+                            <ul class="main-sidebar-lists__inner-list inner-sidebar-list">
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Конструирование радиоэлектронной аппаратуры»</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Радиотехника»</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Сети связи и телекоммуникационные системы»</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Физика»</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Электротехника»</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Приборы и методы измерений, контроля, диагностики»</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
 
-        </aside>
+            <div class="main-page__main-content main-content col-xs-12 col-sm-8 col-md-8 col-lg-7">
+                <div class="primary-content">
+                    <div class="primary-content__announced-card announce-card">
+                        <div class="announce-card__heading">
+                            <h2 class="announce-card__title">
+                                Объявления
+                                <span class="announce-card__count-of-announce count-of-announce">3</span>
+                            </h2>
+                        </div>
+                        <div class="announce-card__body">
+                            <ul class="announce-card__list">
+                                <li class="announce-card__item">
+                                    <a href="#" class="announce-card__description-link">До 11 мая — запись на программу
+                                        повышения квалификации "Text Mining"</a>
+                                </li>
+                                <li class="announce-card__item">
+                                    <a href="#" class="announce-card__description-link">До 13 мая — запись на программу
+                                        повышения квалификации "Python как первый язык программирования"</a>
+                                </li>
+                                <li class="announce-card__item">
+                                    <a href="#" class="announce-card__description-link">До 22 мая — регистрация на
+                                        третью летнюю школу "Машинное обучение в физике высоких энергий"</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="main-page__main-content main-content">
-            <div class="main-content__primary"></div>
-            <div class="main-content__secondary"></div>
+            <aside class="main-page__sub-info sub-info hidden-md-down col-md-2 col-lg-3">
+
+                <div class="card-about">
+                    <div class="card-about__container">
+                        <div class="card-about__caption secondary-card-caption secondary-card-caption--main-theme-3">
+                            <a href="#" class="secondary-card-caption__link">О факультете</a>
+                        </div>
+                        <div class="card-about__body">
+
+                            <div class="card-about__item">
+                                <div class="card-about__content">
+
+                                    <div class="card-about__title">
+                                        <p class="card-about__description">
+                                            Семинар лаборатории теоретической информатики: "Верхняя оценка на взаимную
+                                            информацию через ранг матрицы совместного распределения". Докладчик: А.
+                                            Рязанов
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
         </div>
     </div>
+</div>
 
 </body>
 

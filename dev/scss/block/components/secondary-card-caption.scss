@@ -4,14 +4,14 @@
     font-family: $helvetica;
     line-height: 1.2;
     font-size: $default-size;
-    border-bottom: 1px solid $main-theme-5;
+    border-bottom: 1px solid $grey-3;
 
     &__text {
         color: inherit;
     }
 
     &__link {
-        color: $main-theme-5;
+        color: $grey-3;
         text-decoration: none;
         transition: all .15s ease-in-out;
 

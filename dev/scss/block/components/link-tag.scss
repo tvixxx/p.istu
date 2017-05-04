@@ -11,11 +11,11 @@
     transition: border-color .2s ease 0s;
 
     &:hover {
-        border: 1px solid rgba(145, 170, 157, .5);
+        border: 1px solid rgba(170, 179, 182, .5);
     }
 
     &:hover &__text {
-        color: $main-theme-3;
+        color: $grey-3;
         opacity: .9;
     }
 
@@ -23,7 +23,7 @@
         box-sizing: border-box;
         display: block;
         padding: 10px;
-        color: $main-theme-5;
+        color: $grey-3;
         transition: all .15s ease-in-out;
         opacity: 1;
 

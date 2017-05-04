@@ -1,0 +1,39 @@
+$main-width: 1600px;
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: $grey-1;
+}
+
+.main-page {
+    box-sizing: border-box;
+    max-width: $main-width;
+    height: 100%;
+    margin: 0 auto;
+    box-shadow: 0 5px 40px 20px rgba(0,0,0, .15);
+
+    .container-fluid {
+        height: 100%;
+    }
+
+    .row {
+        height: 100%;
+    }
+
+    &__sidebar {
+        height: 100%;
+    }
+
+    &__main-content {
+        padding-top: 300px;
+    }
+
+    &__sub-info {
+        padding-top: 300px;
+        padding-right: 0;
+    }
+}

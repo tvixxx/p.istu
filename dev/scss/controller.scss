@@ -1,5 +1,3 @@
-// scss-lint:disable StringQuotes
-// charset нужно указывать только в двойных кавычках
 @charset "utf-8";
 
 @import 'set/reset';
@@ -9,11 +7,18 @@
 @import 'set/common';
 @import 'set/grid';
 
+@import "../../bower_components/bootstrap/scss/bootstrap.scss";
+
 /* block:scss */
 @import 'block/block';
+@import 'block/main-page';
 @import 'block/components/card-about';
+@import 'block/components/card-announce';
 @import 'block/components/card-events';
+@import 'block/components/count-of-announce';
 @import 'block/components/link-tag';
+@import 'block/components/main-sidebar-lists';
 @import 'block/components/secondary-card-caption';
+@import 'block/components/sidebar';
 @import 'block/components/text-link';
 /* endinject */

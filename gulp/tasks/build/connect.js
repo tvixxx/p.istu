@@ -9,7 +9,7 @@ gulp.task('connect', function(){
 
     connect.server({
         root: config.dest,
-        port: 1234,
+        port: 12345,
         livereload: livereload
     });
 });
