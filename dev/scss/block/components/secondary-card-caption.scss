@@ -1,0 +1,41 @@
+.secondary-card-caption {
+    box-sizing: border-box;
+    padding: 10px 0;
+    font-family: $helvetica;
+    line-height: 1.2;
+    font-size: $default-size;
+    border-bottom: 1px solid $main-theme-5;
+
+    &__text {
+        color: inherit;
+    }
+
+    &__link {
+        color: $main-theme-5;
+        text-decoration: none;
+        transition: all .15s ease-in-out;
+
+        &:hover {
+            color: $main-theme-3;
+            text-decoration: none;
+        }
+
+        &:active {
+            color: $main-theme-3;
+        }
+    }
+
+    &--main-theme-3 &__link {
+
+        &:hover {
+            color: $main-theme-1;
+            text-decoration: none;
+        }
+
+        &:active {
+            color: $main-theme-1;
+        }
+    }
+
+
+}

@@ -1,0 +1,56 @@
+.card-events {
+    box-sizing: border-box;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgba(33, 33, 33, .2);
+    background-color: $main-theme-2;
+
+    &__container {
+        padding: 20px;
+    }
+
+    &__caption {
+        display: block;
+    }
+
+    &__caption + &__body {
+        margin-top: 20px;
+    }
+
+    &__body {
+        display: block;
+        width: 100%;
+    }
+
+    &__item {
+        display: block;
+    }
+
+    &__content {
+        display: block;
+    }
+
+    &__date {
+        font-family: $helvetica;
+        text-transform: capitalize;
+    }
+
+    &__date + &__title {
+        margin-top: 20px;
+    }
+
+    &__title {
+        transition: all .15s ease-in-out;
+
+        //&:hover > * {
+        //    color: $main-theme-3;
+        //    text-decoration: underline;
+        //}
+    }
+
+    &__btn-link {
+        display: inline-block;
+        text-align: left;
+        font-family: $helvetica;
+    }
+}

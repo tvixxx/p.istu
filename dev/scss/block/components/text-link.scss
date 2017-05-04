@@ -1,0 +1,12 @@
+.text-link {
+    display: inline-block;
+    line-height: 1.3;
+    color: $main-theme-3;
+    text-decoration: underline;
+    transition: .15s ease-in-out;
+
+    &:hover {
+        color: $hover-link;
+        text-decoration: underline;
+    }
+}

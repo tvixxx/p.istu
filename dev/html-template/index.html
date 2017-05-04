@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <title>istu</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="svg/js-sprite.js"></script>
+    <script src="js/plugins/polyfill.min.js"></script>
+</head>
+<body>
+<!-- include svg sprite-->
+<div id="svg-icon-placeloholder"></div>
+<script>if (window.svgsprite) { document.getElementById('svg-icon-placeholder').innerHTML = svgsprite; }</script>
+
+
+    <div class="main-page">
+        <aside class="main-page__sidebar sidebar">
+
+        </aside>
+
+        <div class="main-page__main-content main-content">
+            <div class="main-content__primary"></div>
+            <div class="main-content__secondary"></div>
+        </div>
+    </div>
+
+</body>
+
+<!-- build:js(dev/../) js/vendor.min.js-->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<!-- endbuild-->
+
+<!-- build:js(dev/) js/script.min.js-->
+<script src="js/script.js"></script>
+<!-- endbuild-->
+</html>
