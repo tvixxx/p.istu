@@ -1,0 +1,35 @@
+.primary-content {
+    display: block;
+
+    &__list-posts {
+        display: block;
+        list-style-type: none;
+        box-shadow: 0 2px 5px 0 rgba(33, 33, 33, 0.2);
+    }
+
+    &__post-item {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: '';
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 93%;
+            height: 1px;
+            background-color: $grey-4;
+        }
+
+        &:last-of-type:after {
+            display: none;
+        }
+    }
+
+    &__post {
+        display: block;
+    }
+}

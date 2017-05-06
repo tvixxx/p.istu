@@ -1,4 +1,23 @@
 .inner-sidebar-list {
-    display: block;
     list-style-type: none;
+
+    &__item {
+        box-sizing: border-box;
+        display: block;
+        padding: 0 20px;
+        background-color: transparent;
+        transition: background-color .2s ease-in-out;
+
+        &:hover {
+            background-color: $grey-1;
+        }
+
+        & + & {
+            margin-top: 10px;
+        }
+    }
+
+    &__link {
+        display: block;
+    }
 }

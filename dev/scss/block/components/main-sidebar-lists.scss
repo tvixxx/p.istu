@@ -2,4 +2,24 @@
     box-sizing: border-box;
     display: block;
     list-style-type: none;
+    margin-left: -20px;
+    margin-right: -20px;
+
+    &__item {
+        display: block;
+    }
+
+    &__title {
+        box-sizing: border-box;
+        display: block;
+        padding: 10px 0 10px 20px;
+        color: $grey-1;
+        border-bottom: 1px solid $grey-1;
+    }
+
+    &__inner-list {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+    }
 }

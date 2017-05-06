@@ -1,7 +1,7 @@
 $main-width: 1600px;
 
 html {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
@@ -25,11 +25,15 @@ body {
     }
 
     &__sidebar {
-        height: 100%;
+        min-height: 100%;
     }
 
     &__main-content {
-        padding-top: 300px;
+        padding-top: 30px;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 300px;
+        }
     }
 
     &__sub-info {

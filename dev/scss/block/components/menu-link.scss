@@ -1,0 +1,12 @@
+.menu-link {
+    color: $grey-3;
+    border-bottom: 1px solid $grey-3;
+    transition: all .15s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        color: $grey-2;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+    }
+}

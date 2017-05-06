@@ -1,0 +1,9 @@
+.sub-info {
+    box-sizing: border-box;
+    display: block;
+
+    @include media-breakpoint-up(xl) {
+        max-width: 21%;
+        flex: 0 0 21%;
+    }
+}

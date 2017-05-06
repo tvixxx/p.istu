@@ -20,35 +20,69 @@
 <div class="main-page">
     <div class="container-fluid">
         <div class="row">
-            <aside class="main-page__sidebar sidebar col-xs-12 col-sm-4 col-md-4 col-lg-2">
+            <aside class="main-page__sidebar sidebar col-xs-12 col-sm-4 col-md-3">
                 <div class="sidebar__content">
+
                     <div class="sidebar__heading">
                         <a class="sidebar__logo" href="#">
-                            <img src="../img/logo.png" alt="Логотип Приборостроительного факультета">
+                            <img class="sidebar__image" src="../img/logo.png" alt="Логотип Приборостроительного факультета">
                         </a>
-                        <h2 class="sidebar__title">Приборостроительный факультет</h2>
+                        <h2 class="sidebar__title">Приборо&shy;строительный факультет</h2>
+
+                        <div class="sidebar__footer-info">
+                            <a href="#" class="sidebar__contacts-link text-link text-link--white-link">Контакты</a>
+                        </div>
                     </div>
+
+                    <!-- Главное меню -->
+                    <ul class="sidebar__menu-list main-sidebar-lists">
+                        <li class="main-sidebar-lists__item">
+                            <p class="main-sidebar-lists__title">Факультет</p>
+                            <ul class="main-sidebar-lists__inner-list inner-sidebar-list">
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link menu-link">О Факультете</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Сотрудники</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Фотогаллерея</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Студенту</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Абитуриенту</a>
+                                </li>
+                                <li class="inner-sidebar-list__item">
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Новости Факультета</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- Подразделения -->
                     <ul class="sidebar__menu-list main-sidebar-lists">
                         <li class="main-sidebar-lists__item">
                             <p class="main-sidebar-lists__title">Подразделения</p>
                             <ul class="main-sidebar-lists__inner-list inner-sidebar-list">
                                 <li class="inner-sidebar-list__item">
-                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Конструирование радиоэлектронной аппаратуры»</a>
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Кафедра «Конструирование радиоэлектронной аппаратуры»</a>
                                 </li>
                                 <li class="inner-sidebar-list__item">
-                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Радиотехника»</a>
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Кафедра «Радиотехника»</a>
                                 </li>
                                 <li class="inner-sidebar-list__item">
-                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Сети связи и телекоммуникационные системы»</a>
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Кафедра «Сети связи и телекоммуникационные системы»</a>
                                 </li>
                                 <li class="inner-sidebar-list__item">
-                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Физика»</a>
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Кафедра «Физика»</a>
                                 </li>
                                 <li class="inner-sidebar-list__item">
-                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Электротехника»</a>
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Кафедра «Электротехника»</a>
                                 </li>
                                 <li class="inner-sidebar-list__item">
-                                    <a href="#" class="inner-sidebar-list__link">Кафедра «Приборы и методы измерений, контроля, диагностики»</a>
+                                    <a href="#" class="inner-sidebar-list__link menu-link">Кафедра «Приборы и методы измерений, контроля, диагностики»</a>
                                 </li>
                             </ul>
                         </li>
@@ -56,9 +90,9 @@
                 </div>
             </aside>
 
-            <div class="main-page__main-content main-content col-xs-12 col-sm-8 col-md-8 col-lg-7">
-                <div class="primary-content">
-                    <div class="primary-content__announced-card announce-card">
+            <div class="main-page__main-content main-content col-xs-12 col-sm-8 col-md-9 col-lg-9 col-xl-8">
+                <div class="main-content__primary-content">
+                    <div class="main-content__announce-card announce-card">
                         <div class="announce-card__heading">
                             <h2 class="announce-card__title">
                                 Объявления
@@ -82,10 +116,120 @@
                             </ul>
                         </div>
                     </div>
+
+                    <div class="main-content__posts-wrapper primary-content">
+                        <ul class="primary-content__list-posts">
+                            <li class="primary-content__post-item">
+                                <article class="primary-content__post post post--news">
+                                    <div class="post__body">
+                                        <div class="post__heading">
+                                            <div class="post__theme-logo">
+                                                <img class="post__preview-image" src="../img/news-icon.png" alt="Иконка новости">
+                                            </div>
+
+                                            <h2 class="post__title">
+                                                <a class="post__title-link link-tag" href="#">Факультет компьютерных наук организовал мероприятие для студентов университета Неймегена</a>
+                                            </h2>
+                                        </div>
+
+                                        <div class="post__content">
+                                            <div class="post__description-preview">
+                                                <img class="post__description-image" src="http://cs.hse.ru//data/2017/05/05/1171456620/3IMG_7593.jpg" alt="">
+                                            </div>
+                                            <p class="post__description">
+                                                Студенты из Нидерландского университета Неймегена имени Святого Радбода Утрехтского (Radboud University Nijmegen) c 20 по 30 апреля приняли участие в культурно-образовательной программе, организованной факультетом компьютерных наук в рамках учебного курса «Информационные и компьютерные технологии в различных культурах».
+                                            </p>
+                                        </div>
+
+                                        <div class="post__footer-info">
+                                            <a class="post__read-article link-tag" href="#">Прочесть</a>
+
+                                            <div class="post__time-post">
+                                                <p class="post__date-text">5 Апреля</p>
+
+                                                <p class="post__time-text">22:44</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+
+                            <li class="primary-content__post-item">
+                                <article class="primary-content__post post post--news">
+                                    <div class="post__body">
+                                        <div class="post__heading">
+                                            <div class="post__theme-logo">
+                                                <img class="post__preview-image" src="../img/news-icon.png" alt="Иконка новости">
+                                            </div>
+
+                                            <h2 class="post__title">
+                                                <a class="post__title-link link-tag" href="#">Факультет компьютерных наук организовал мероприятие для студентов университета Неймегена</a>
+                                            </h2>
+                                        </div>
+
+                                        <div class="post__content">
+                                            <div class="post__description-preview">
+                                                <img class="post__description-image" src="http://cs.hse.ru//data/2017/05/05/1171456620/3IMG_7593.jpg" alt="">
+                                            </div>
+                                            <p class="post__description">
+                                                Студенты из Нидерландского университета Неймегена имени Святого Радбода Утрехтского (Radboud University Nijmegen) c 20 по 30 апреля приняли участие в культурно-образовательной программе, организованной факультетом компьютерных наук в рамках учебного курса «Информационные и компьютерные технологии в различных культурах».
+                                            </p>
+                                        </div>
+
+                                        <div class="post__footer-info">
+                                            <a class="post__read-article link-tag" href="#">Прочесть</a>
+
+                                            <div class="post__time-post">
+                                                <p class="post__date-text">5 Апреля</p>
+
+                                                <p class="post__time-text">22:44</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+
+                            <li class="primary-content__post-item">
+                                <article class="primary-content__post post post--news">
+                                    <div class="post__body">
+                                        <div class="post__heading">
+                                            <div class="post__theme-logo">
+                                                <img class="post__preview-image" src="../img/news-icon.png" alt="Иконка новости">
+                                            </div>
+
+                                            <h2 class="post__title">
+                                                <a class="post__title-link link-tag" href="#">Факультет компьютерных наук организовал мероприятие для студентов университета Неймегена</a>
+                                            </h2>
+                                        </div>
+
+                                        <div class="post__content">
+                                            <div class="post__description-preview">
+                                                <img class="post__description-image" src="http://cs.hse.ru//data/2017/05/05/1171456620/3IMG_7593.jpg" alt="">
+                                            </div>
+                                            <p class="post__description">
+                                                Студенты из Нидерландского университета Неймегена имени Святого Радбода Утрехтского (Radboud University Nijmegen) c 20 по 30 апреля приняли участие в культурно-образовательной программе, организованной факультетом компьютерных наук в рамках учебного курса «Информационные и компьютерные технологии в различных культурах».
+                                            </p>
+                                        </div>
+
+                                        <div class="post__footer-info">
+                                            <a class="post__read-article link-tag" href="#">Прочесть</a>
+
+                                            <div class="post__time-post">
+                                                <p class="post__date-text">5 Апреля</p>
+
+                                                <p class="post__time-text">22:44</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <aside class="main-page__sub-info sub-info hidden-md-down col-md-2 col-lg-3">
+            <aside class="main-page__sub-info sub-info hidden-lg-down col-lg-3">
 
                 <div class="card-about">
                     <div class="card-about__container">
