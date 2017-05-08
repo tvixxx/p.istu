@@ -1,3 +1,77 @@
 .contacts-menu {
+    display: block;
 
+    &__item {
+        box-sizing: border-box;
+        display: block;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        list-style: none;
+        padding: 5px 20px;
+        color: $grey-1;
+        font-size: 0;
+
+        & + & {
+            margin-top: 15px;
+        }
+    }
+
+    &__address-module {
+        display: block;
+        font-size: 14px;
+        flex: 1;
+        //border-bottom: 1px solid $grey-1;
+    }
+
+    &__address-module + &__address-value {
+        padding-left: 15px;
+    }
+
+    &__address-value {
+        display: block;
+        flex: 3;
+        font-size: 14px;
+        color: $grey-3;
+    }
+
+    &__phone-module {
+        flex: 1;
+        font-size: 14px;
+        //border-bottom: 1px solid $grey-1;
+    }
+
+    &__phone-module + &__phone-value {
+        padding-left: 15px;
+    }
+
+    &__phone-value {
+        flex: 3;
+        font-size: 14px;
+    }
+
+    &__email-module {
+        display: block;
+        flex: 1;
+        font-size: 14px;
+        //border-bottom: 1px solid $grey-1;
+    }
+
+    &__email-module + &__email-value {
+        padding-left: 15px;
+    }
+
+    &__email-value {
+        flex: 1;
+        font-size: 14px;
+    }
+
+    &__email-value + &__email-sub-info {
+        padding-left: 5px;
+    }
+
+    &__email-sub-info {
+        font-size: 14px;
+    }
 }
