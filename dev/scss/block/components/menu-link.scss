@@ -3,10 +3,23 @@
     border-bottom: 1px solid $grey-3;
     transition: all .15s ease-in-out;
     text-decoration: none;
+    padding: 0 20px 5px;
 
     &:hover {
         color: $grey-2;
         text-decoration: none;
         border-bottom: 1px solid transparent;
+    }
+
+    &--menu-size {
+        font-size: 14px;
+
+        @include media-breakpoint-up(xs) {
+            font-size: 15px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 16px;
+        }
     }
 }
