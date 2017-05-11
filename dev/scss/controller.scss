@@ -12,11 +12,12 @@
 /* block:scss */
 @import 'block/block';
 @import 'block/main-page';
+@import 'block/components/announce-card';
 @import 'block/components/card-about';
-@import 'block/components/card-announce';
 @import 'block/components/card-events';
 @import 'block/components/contacts-menu';
 @import 'block/components/count-of-announce';
+@import 'block/components/footer';
 @import 'block/components/head-list';
 @import 'block/components/inner-sidebar-list';
 @import 'block/components/link-tag';
@@ -29,4 +30,5 @@
 @import 'block/components/sidebar';
 @import 'block/components/sub-info';
 @import 'block/components/text-link';
+@import 'block/components/visuallyhidden';
 /* endinject */

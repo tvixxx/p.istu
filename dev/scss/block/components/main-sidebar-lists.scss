@@ -15,11 +15,16 @@
         padding: 10px 0 10px 20px;
         color: $grey-1;
         border-bottom: 1px solid $grey-1;
+        margin-bottom: 0;
     }
 
     &__inner-list {
         box-sizing: border-box;
         display: block;
         width: 100%;
+    }
+
+    &__inner-list.head-list {
+        margin-top: 20px;
     }
 }

@@ -70,6 +70,12 @@
         width: 100%;
     }
 
+    &__section {
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+    }
+
     &__menu-list {
         box-sizing: border-box;
         display: block;
