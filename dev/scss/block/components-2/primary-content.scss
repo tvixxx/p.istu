@@ -1,0 +1,21 @@
+$vertical-gutter: 28px;
+
+.primary-content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 59.42%;
+    flex: 0 0 59.42%;
+    width: 100%;
+    padding-top: $vertical-gutter;
+    border-right: 1px solid $border-section-divider;
+
+    &__genre {
+        display: block;
+    }
+
+    &__genre + &__body {
+        margin-top: 26px;
+    }
+}

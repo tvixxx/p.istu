@@ -1,0 +1,18 @@
+$link-font-size: 10px;
+$link-line-height: 28px; //28px
+
+.secondary-link {
+    box-sizing: border-box;
+    color: $main-grey-color;
+    opacity: .6;
+    transition: all .15s ease-in-out;
+    text-transform: uppercase;
+    font-size: $link-font-size;
+    line-height: $link-line-height;
+    font-family: $font--roboto;
+    font-weight: 500;
+
+    &:hover {
+        opacity: 1;
+    }
+}

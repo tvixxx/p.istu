@@ -1,0 +1,19 @@
+.hamburger {
+    box-sizing: border-box;
+    width: 16px;
+    height: 12px;
+    text-align: center;
+
+    &__svg {
+        width: 16px;
+        height: 12px;
+        fill: $main-grey-color;
+        cursor: pointer;
+        opacity: .3;
+        transition: all .15s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

@@ -1,115 +1,115 @@
-.contacts-menu {
-    display: block;
-
-    &__item {
-        box-sizing: border-box;
-        display: block;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        list-style: none;
-        padding: 5px 20px;
-        color: $grey-1;
-        font-size: 0;
-
-        @include media-breakpoint-up(lg) {
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: space-between;
-        }
-
-        & + & {
-            margin-top: 15px;
-        }
-    }
-
-    &__address-module {
-        display: block;
-        flex: 1;
-        font-size: 14px;
-        line-height: 24px;
-    }
-
-    &__address-module + &__address-value {
-        padding-left: 0;
-
-        @include media-breakpoint-up(lg) {
-            padding-left: 15px;
-        }
-    }
-
-    &__address-value {
-        display: block;
-        flex: 3;
-        font-size: 14px;
-        color: $grey-3;
-    }
-
-    &__phone-module {
-        display: block;
-        flex: 1;
-        font-size: 14px;
-        line-height: 24px;
-    }
-
-    &__phone-module + &__phone-value {
-        padding-left: 0;
-
-        @include media-breakpoint-up(lg) {
-            padding-left: 15px;
-        }
-    }
-
-    &__phone-value {
-        display: block;
-        flex: 3;
-        font-size: 14px;
-        color: $grey-3;
-    }
-
-    &__email-module {
-        display: block;
-        flex: 1;
-        font-size: 14px;
-        line-height: 24px;
-    }
-
-    &__email-module + &__email-value {
-        padding-left: 0;
-
-        @include media-breakpoint-up(lg) {
-            padding-left: 15px;
-        }
-    }
-
-    &__email-value {
-        display: block;
-        flex: 3;
-        font-size: 14px;
-        line-height: 24px;
-        color: $grey-3;
-    }
-
-    &__email-value + &__email-sub-info {
-        padding-left: 0;
-
-        @include media-breakpoint-up(lg) {
-            padding-left: 15px;
-        }
-    }
-
-    &__email-value-link {
-        color: $grey-3;
-        text-decoration: none;
-
-        &:hover {
-            color: $grey-1;
-            text-decoration: none;
-        }
-    }
-
-    &__email-sub-info {
-        font-size: 14px;
-    }
-}
+//.contacts-menu {
+//    display: block;
+//
+//    &__item {
+//        box-sizing: border-box;
+//        display: block;
+//        display: flex;
+//        flex-direction: column;
+//        align-items: flex-start;
+//        flex-wrap: wrap;
+//        list-style: none;
+//        padding: 5px 20px;
+//        color: $grey-1;
+//        font-size: 0;
+//
+//        @include media-breakpoint-up(lg) {
+//            flex-direction: row;
+//            align-items: flex-start;
+//            justify-content: space-between;
+//        }
+//
+//        & + & {
+//            margin-top: 15px;
+//        }
+//    }
+//
+//    &__address-module {
+//        display: block;
+//        flex: 1;
+//        font-size: 14px;
+//        line-height: 24px;
+//    }
+//
+//    &__address-module + &__address-value {
+//        padding-left: 0;
+//
+//        @include media-breakpoint-up(lg) {
+//            padding-left: 15px;
+//        }
+//    }
+//
+//    &__address-value {
+//        display: block;
+//        flex: 3;
+//        font-size: 14px;
+//        color: $grey-3;
+//    }
+//
+//    &__phone-module {
+//        display: block;
+//        flex: 1;
+//        font-size: 14px;
+//        line-height: 24px;
+//    }
+//
+//    &__phone-module + &__phone-value {
+//        padding-left: 0;
+//
+//        @include media-breakpoint-up(lg) {
+//            padding-left: 15px;
+//        }
+//    }
+//
+//    &__phone-value {
+//        display: block;
+//        flex: 3;
+//        font-size: 14px;
+//        color: $grey-3;
+//    }
+//
+//    &__email-module {
+//        display: block;
+//        flex: 1;
+//        font-size: 14px;
+//        line-height: 24px;
+//    }
+//
+//    &__email-module + &__email-value {
+//        padding-left: 0;
+//
+//        @include media-breakpoint-up(lg) {
+//            padding-left: 15px;
+//        }
+//    }
+//
+//    &__email-value {
+//        display: block;
+//        flex: 3;
+//        font-size: 14px;
+//        line-height: 24px;
+//        color: $grey-3;
+//    }
+//
+//    &__email-value + &__email-sub-info {
+//        padding-left: 0;
+//
+//        @include media-breakpoint-up(lg) {
+//            padding-left: 15px;
+//        }
+//    }
+//
+//    &__email-value-link {
+//        color: $grey-3;
+//        text-decoration: none;
+//
+//        &:hover {
+//            color: $grey-1;
+//            text-decoration: none;
+//        }
+//    }
+//
+//    &__email-sub-info {
+//        font-size: 14px;
+//    }
+//}

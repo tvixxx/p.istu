@@ -1,0 +1,18 @@
+.main-menu {
+    display: inline-block;
+    font-size: 0;
+
+    &__hamburger {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__hamburger + &__main-heading {
+        margin-left: 20px;
+    }
+
+    &__main-heading {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}

@@ -1,24 +1,24 @@
-.main-content {
-    display: block;
-
-    @include media-breakpoint-up(xl) {
-        max-width: 60%;
-        flex: 0 0 60%;
-    }
-
-    &__primary-content {
-        display: block;
-    }
-
-    &__announce-card {
-        display: block;
-    }
-
-    &__announce-card + &__posts-wrapper {
-        margin-top: 20px;
-    }
-
-    &__posts-wrapper {
-        display: block;
-    }
-}
+//.main-content {
+//    display: block;
+//
+//    @include media-breakpoint-up(xl) {
+//        max-width: 60%;
+//        flex: 0 0 60%;
+//    }
+//
+//    &__primary-content {
+//        display: block;
+//    }
+//
+//    &__announce-card {
+//        display: block;
+//    }
+//
+//    &__announce-card + &__posts-wrapper {
+//        margin-top: 20px;
+//    }
+//
+//    &__posts-wrapper {
+//        display: block;
+//    }
+//}

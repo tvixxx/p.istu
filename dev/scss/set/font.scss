@@ -1,4 +1,16 @@
 // font rule here
+//@font-face {
+//    font-family: 'Roboto';
+//    src: url('font/roboto/Roboto.eot');
+//    src: url('font/roboto/Roboto?#iefix') format('embedded-opentype'),
+//    url('font/roboto/Roboto.woff2') format('woff2'),
+//    url('font/roboto/Roboto.woff') format('woff'),
+//    url('font/roboto/Roboto.ttf') format('truetype');
+//    font-weight: 100;
+//    font-style: normal;
+//}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=cyrillic-ext');
 
 // fonts variables
-$font--primary: 'example', 'sans-serif';
+$font--roboto: 'Roboto','Times New Roman', sans-serif;

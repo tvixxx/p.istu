@@ -4,12 +4,12 @@ $helvetica: "Helvetica Neue", Arial, sans-serif;
 $open-sans: "Open Sans", "Helvetica Neue", Arial, sans-serif;
 
 // main theme colours
-$main-theme-1: #FCFFF5;
-$main-theme-2: #D1DBBD;
-$main-theme-3: #91AA9D;
-$hover-link: #67917b;
-$main-theme-4: #3E606F;
-$main-theme-5: #193441;
+//$main-theme-1: #FCFFF5;
+//$main-theme-2: #D1DBBD;
+//$main-theme-3: #91AA9D;
+//$hover-link: #67917b;
+//$main-theme-4: #3E606F;
+//$main-theme-5: #193441;
 
 // colours
 $white-color: #fff;
@@ -24,12 +24,26 @@ $m-size: 20px;
 $xl-size: 24px;
 $xxl-size: 32px;
 
+//for first version template
+//$grey-1: #f1f1f5;
+//$grey-2: #636769;
+//$grey-3: #AAB3B6;
+//$grey-4: #6E7476;
+//$grey-5: #4B4E50;
+//$grey-6: #e1e4d9;
+//$grey-7: #535658;
 
-$grey-1: #f1f1f5;
-$grey-2: #636769;
-$grey-3: #AAB3B6;
-$grey-4: #6E7476;
-$grey-5: #4B4E50;
+//main themes for second version
+$main-page-outer-bg-color: #eeeef1;
+$main-page-inner-bg-color: #f8f8fa;
 
-$grey-6: #e1e4d9;
-$grey-7: #535658;
+$main-card-bg-color: #ffffff;
+$main-grey-color: #4a4a4a;
+$main-light-grey-color: #a3a3a3;
+
+$link-light-blue-color: #4c5989;
+
+$placeholder-bg-color: #e7e7e9;
+
+$border-section-divider: #e7e7e9;
+$border-card-divider: #ededed;

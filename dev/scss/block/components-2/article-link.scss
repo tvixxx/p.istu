@@ -1,0 +1,11 @@
+.article-link {
+    font-size: 21px;
+    line-height: 30px;
+    color: $main-grey-color;
+    transition: all .15s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-light-blue-color;
+    }
+}

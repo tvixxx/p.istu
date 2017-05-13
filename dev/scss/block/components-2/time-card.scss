@@ -1,0 +1,97 @@
+.time-card {
+    position: relative;
+    width: 100%;
+    color: $main-grey-color;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(74,74,74, .1);
+
+    &__body {
+        display: flex;
+        flex: 1 auto;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    &__main-info {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $border-card-divider;
+    }
+
+    &__time-icon {
+        width: 30px;
+        height: 30px;
+
+        &--low-size {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    &__svg-time-icon {
+        fill: $main-grey-color;
+    }
+
+    &__time-icon + &__istu-time {
+        margin-left: 20px;
+    }
+
+    &__istu-time {
+        font-size: 36px;
+        line-height: 1;
+        font-weight: 300;
+        color: $main-grey-color;
+    }
+
+    &__istu-time + &__istu-week {
+        margin-left: 30px;
+    }
+
+    &__istu-week {
+        font-size: 11px;
+        line-height: 19px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $main-light-grey-color;
+    }
+
+    &__addition-info {
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 27px;
+    }
+
+    &__lesson-now {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    &__time-icon + &__lesson-now-time {
+        margin-left: 12px;
+    }
+
+    &__lesson-now-time {
+        font-size: 11px;
+        line-height: 18px;
+        color: $main-light-grey-color;
+        font-weight: 500;
+    }
+
+    &__end-text {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: $main-grey-color;
+    }
+}
