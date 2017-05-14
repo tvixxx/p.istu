@@ -2,15 +2,10 @@
     box-sizing: border-box;
     font-family: $font--roboto;
 
-    & + & {
-        margin-top: 40px;
-    }
-
     &__preview {
         position: relative;
         width: 360px;
-        flex-basis: 360px;
-        //height: 200px;
+        height: 225px;
         overflow: hidden;
 
         &:before {
@@ -33,9 +28,10 @@
 
     &__information {
         box-sizing: border-box;
-        flex: 1;
         display: flex;
-        padding: 0 40px 0 25px;
+        width: 100%;
+        max-width: 430px;
+        padding: 0 25px 0 40px;
         flex-direction: column;
         justify-content: space-between;
     }

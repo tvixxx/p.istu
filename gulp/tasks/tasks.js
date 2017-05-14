@@ -16,6 +16,7 @@ gulp.task('watch', function(){
     gulp.watch(config.src + '/font/**/*', ['font']);
     gulp.watch(config.src + '/mock/**/*', ['mock']);
     gulp.watch(config.src + '/svg/**/*', ['svg']);
+    gulp.watch(config.src + '/php/**/*', ['php']);
 });
 
 gulp.task('assets', function(){
@@ -54,6 +55,7 @@ gulp.task('build', function(callback){
             'sprite',
             'svg',
             'js',
+            'php',
             'mock',
             'font',
             'html'

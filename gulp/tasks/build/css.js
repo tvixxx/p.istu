@@ -46,7 +46,7 @@ gulp.task('css', ['css-inject-block'], function(){
             console.error('Error!', err.message);
         })
         .pipe(autoprefixer({
-            browsers: ['last 3 versions'],
+            browsers: ['last 7 versions', 'IE >= 9', 'Android >= 4.4'],
             cascade: false
         }))
         .pipe(sourcemaps.write())

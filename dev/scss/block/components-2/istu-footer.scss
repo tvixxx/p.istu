@@ -1,0 +1,43 @@
+.istu-footer {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px 22px 30px 25px;
+    background-color: $white-color;
+    box-shadow: 0 2px 5px 0 rgba(74,74,74, .1);
+
+    //&__preview-logo {
+    //    width: 82px;
+    //    height: 130px;
+    //    background-color: $main-page-inner-bg-color;
+    //}
+    //
+    //&__logo {
+    //    width: 72px;
+    //    height: 120px;
+    //}
+
+    &__list-links {
+        display: flex;
+        width: 100%;
+        max-width: 400px;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    &__item {
+        list-style: none;
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__list-links + &__copyright-sign {
+        margin-top: 20px;
+    }
+
+    &__copyright-sign {
+        font-weight: 500;
+    }
+}

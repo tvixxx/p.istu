@@ -4,7 +4,12 @@ $horizontal-gutter: 30px;
 .secondary-content {
     box-sizing: border-box;
     display: flex;
-    flex: 1 auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 490px;
     padding-left: $horizontal-gutter;
     padding-top: $vertical-gutter;
+    padding-bottom: 30px;
 }

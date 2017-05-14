@@ -1,13 +1,16 @@
 .time-card {
     position: relative;
     width: 100%;
+    max-width: 460px;
     color: $main-grey-color;
     background-color: #fff;
     box-shadow: 0 2px 5px 0 rgba(74,74,74, .1);
+    margin-bottom: 30px;
 
     &__body {
+        box-sizing: border-box;
         display: flex;
-        flex: 1 auto;
+        width: 100%;
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
@@ -47,10 +50,17 @@
         line-height: 1;
         font-weight: 300;
         color: $main-grey-color;
+        text-decoration: none;
+        transition: all .15s ease-in-out;
+
+        &:hover {
+            color: $main-light-grey-color;
+            text-decoration: none;
+        }
     }
 
     &__istu-time + &__istu-week {
-        margin-left: 30px;
+        margin-left: 32px;
     }
 
     &__istu-week {
@@ -88,9 +98,13 @@
     }
 
     &__end-text {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 150px;
         font-size: 11px;
         font-weight: 500;
         line-height: 18px;
+        text-align: left;
         text-transform: uppercase;
         color: $main-grey-color;
     }

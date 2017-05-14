@@ -1,0 +1,109 @@
+.card-info {
+    box-sizing: border-box;
+    position: relative;
+    padding: 28px 30px;
+    font-family: $font--roboto;
+    color: $main-grey-color;
+    background-color: $white-color;
+    box-shadow: 0 2px 5px 0 rgba(74,74,74, .1);
+
+    & + & {
+        margin-top: 30px;
+    }
+
+    &__heading {
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 22px;
+        border-bottom: 1px solid $border-card-divider;
+    }
+
+    &__heading-text {
+
+    }
+
+    &__archive-news {
+        display: inline-block;
+        color: $main-light-grey-color;
+    }
+
+    &__archive-text {
+        display: inline-block;
+        font-size: 10px;
+        line-height: 1;
+        font-weight: 500;
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+
+    &__archive-text + &__arrow-icon {
+        margin-left: 14px;
+    }
+
+    &__arrow-icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 3px;
+        height: 6px;
+        margin-top: -1px;
+    }
+
+    &__svg-arrow-icon {
+        display: block;
+        fill: $main-light-grey-color;
+    }
+
+    &__body {
+        box-sizing: border-box;
+        padding-top: 30px;
+    }
+
+    &__list {
+        list-style-type: none;
+    }
+
+    &__item {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        //-ms-flex-align: end;
+        //align-items: flex-start;
+        //justify-content: space-between;
+        list-style: none;
+        padding-bottom: 25px;
+        border-bottom: 1px solid $border-card-divider;
+
+        & + & {
+            padding-top: 30px;
+        }
+    }
+
+    &__about-time {
+        font-size: 10px;
+        line-height: 1;
+        font-weight: 400;
+        color: $main-light-grey-color;
+    }
+
+    &__about-time + &__link-news {
+        margin-top: 22px;
+    }
+
+    &__link-news {
+        display: block;
+        position: relative;
+    }
+
+    &--news {
+
+    }
+
+    &--meetup {
+
+    }
+}

@@ -1,0 +1,19 @@
+.btn-more {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    background-color: $white-color;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    color: $main-grey-color;
+    box-shadow: 0 2px 5px 0 rgba(74,74,74, .1);
+    transition: all .15s ease-in-out;
+    opacity: 1;
+
+    &:hover {
+        color: $link-light-blue-color;
+        opacity: .8;
+        box-shadow: 0 3px 6px 0 rgba(74,74,74, .1);
+    }
+}
