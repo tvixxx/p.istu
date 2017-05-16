@@ -1,1 +1,11 @@
-
+.primary-nav-menu {
+    position: relative;
+    display: flex;
+    max-width: 300px;
+    min-width: 300px;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: $main-nav-menu-bg-color;
+}

@@ -9,6 +9,7 @@
 
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
 
+
 /* block:scss */
 @import 'block/block';
 @import 'block/main-page';
@@ -38,6 +39,7 @@
 @import 'block/components-2/hamburger';
 @import 'block/components-2/istu-footer';
 @import 'block/components-2/link-news';
+@import 'block/components-2/list-content';
 @import 'block/components-2/main-heading';
 @import 'block/components-2/main-link';
 @import 'block/components-2/main-menu';
@@ -50,4 +52,8 @@
 @import 'block/components-2/section-heading';
 @import 'block/components-2/section-text';
 @import 'block/components-2/time-card';
+@import 'block/plugins/jquery.mCustomScrollbar';
+@import 'block/plugins/jquery.scrollbar';
 /* endinject */
+
+

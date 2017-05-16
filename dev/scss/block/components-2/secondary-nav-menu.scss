@@ -1,17 +1,17 @@
 .secondary-nav-menu {
+    position: relative;
     box-sizing: border-box;
-    max-width: 1380px;
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     font-size: 0;
     padding: 30px 22px 30px 25px;
-    box-shadow: 0 2px 5px 0 rgba(74,74,74, .1);
+    box-shadow: 0 3px 6px 0 rgba(74,74,74, .15);
     background-color: $white-color;
+    z-index: 100;
 
     &__main-menu {
         display: flex;
@@ -46,7 +46,7 @@
         top: 6px;
     }
 
-    &__list-item:nth-of-type(5) &__item-icon {
+    &__list-item:nth-of-type(4) &__item-icon {
         top: 5px;
     }
 
@@ -72,5 +72,20 @@
         box-sizing: border-box;
         position: relative;
         padding-left: 25px;
+    }
+
+    &__personal-account {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        list-style: none;
+        align-content: center;
+    }
+
+    &__personal-account:hover &__item-icon {
+        opacity: 1;
     }
 }

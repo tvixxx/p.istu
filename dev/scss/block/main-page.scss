@@ -64,7 +64,6 @@ body, html {
     position: relative;
     box-sizing: border-box;
     display: block;
-    max-width: 1380px;
     width: 100%;
     height: auto;
     margin-left: auto;
@@ -75,6 +74,11 @@ body, html {
         height: 100%;
     }
 
+    &__flex {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
     &__content {
         box-sizing: border-box;
         position: relative;
@@ -82,10 +86,8 @@ body, html {
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
-        width: 100%;
+        width: calc(100% - 300px);
         height: auto;
-        padding-left: 40px;
-        padding-right: 30px;
         background-color: $main-page-inner-bg-color;
         box-shadow: 0 2px 5px 0 rgba(74,74,74, .1);
     }

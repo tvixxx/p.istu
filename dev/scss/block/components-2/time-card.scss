@@ -1,7 +1,7 @@
 .time-card {
     position: relative;
     width: 100%;
-    max-width: 460px;
+    max-width: 100%;
     color: $main-grey-color;
     background-color: #fff;
     box-shadow: 0 2px 5px 0 rgba(74,74,74, .1);
@@ -22,9 +22,18 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
         width: 100%;
         padding-bottom: 24px;
         border-bottom: 1px solid $border-card-divider;
+    }
+
+    &__timer-info {
+        display: flex;
+        max-width: 100%;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
     }
 
     &__time-icon {
@@ -59,11 +68,13 @@
         }
     }
 
-    &__istu-time + &__istu-week {
-        margin-left: 32px;
-    }
+    //&__istu-time + &__istu-week {
+    //    margin-left: 32px;
+    //}
 
     &__istu-week {
+        width: 100%;
+        max-width: 150px;
         font-size: 11px;
         line-height: 19px;
         font-weight: 500;
@@ -92,7 +103,8 @@
 
     &__lesson-now-time {
         font-size: 11px;
-        line-height: 18px;
+        line-height: 1;
+        padding-top: 5px;
         color: $main-light-grey-color;
         font-weight: 500;
     }
