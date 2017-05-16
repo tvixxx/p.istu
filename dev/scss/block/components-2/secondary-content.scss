@@ -1,15 +1,15 @@
-$vertical-gutter: 28px;
+$vertical-gutter: 30px;
 $horizontal-gutter: 30px;
 
 .secondary-content {
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
+    display: inline-block;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: flex-start;
+    //flex-wrap: nowrap;
+    //flex: 1 50%;
+    width: 100%;
     max-width: 50%;
-    flex: 1 50%;
-    padding-left: $horizontal-gutter;
-    padding-top: $vertical-gutter;
-    padding-bottom: 30px;
+    padding: $vertical-gutter $horizontal-gutter;
 }

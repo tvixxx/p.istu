@@ -31,6 +31,7 @@
     "jquery.nicescroll": "^3.6.8",
     "merge-stream": "^0.1.8",
     "minimist": "^1.1.2",
+    "perfect-scrollbar": "^0.7.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.2",
     "yargs": "^3.18.0"

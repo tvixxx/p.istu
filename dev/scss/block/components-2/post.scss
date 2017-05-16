@@ -30,10 +30,14 @@
         box-sizing: border-box;
         display: flex;
         width: 100%;
-        max-width: 430px;
-        padding: 0 25px 0 40px;
+        max-width: 100%;
+        padding: 20px 0;
         flex-direction: column;
         justify-content: space-between;
+
+        @include media-breakpoint-up(lg) {
+
+        }
     }
 
     &__time-info {
@@ -62,10 +66,11 @@
 
     &__head {
         display: block;
+        max-width: 450px;
     }
 
     &__head + &__description {
-        margin-top: 16px;
+        margin-top: 12px;
     }
 
     &__heading {
@@ -80,7 +85,10 @@
         display: block;
     }
 
-    &__description-text {  }
+    &__description-text {
+
+
+    }
 
     &--news {
         display: flex;

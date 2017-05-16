@@ -1,16 +1,18 @@
-$vertical-gutter: 30px;
+$vertical-gutter: 50px;
 $horizontal-gutter: 30px;
 
 .primary-content {
     position: relative;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1 50%;
+    display: inline-block;
+    width: 50%;
+    //height: auto;
+    //display: flex;
+    //flex-direction: column;
+    //align-items: flex-start;
+    //flex: 1 50%;
     max-width: 50%;
-    height: 100%;
-    padding: 0 $horizontal-gutter $vertical-gutter;
+    padding: 0 $horizontal-gutter;
     border-right: 1px solid $border-section-divider;
 
     &__genre {
