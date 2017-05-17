@@ -43,6 +43,16 @@
         font-weight: 500;
         text-transform: uppercase;
         vertical-align: middle;
+        opacity: 1;
+        transition: all .15s ease-in-out;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    &__archive-text:hover + &__arrow-icon {
+        opacity: .7;
     }
 
     &__archive-text + &__arrow-icon {
@@ -55,6 +65,8 @@
         width: 3px;
         height: 6px;
         margin-top: -1px;
+        opacity: 1;
+        transition: all .15s ease-in-out;
     }
 
     &__svg-arrow-icon {

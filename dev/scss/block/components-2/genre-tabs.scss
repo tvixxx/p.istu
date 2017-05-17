@@ -1,0 +1,92 @@
+.genre-tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__title {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        font-size: 10px;
+        line-height: 28px;
+        font-weight: 400;
+        color: $main-light-grey-color;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding-right: 15px;
+
+        &:hover {
+            color: $main-grey-color;
+        }
+    }
+
+    &__title:hover &__svg-arrow-icon {
+        color: $main-grey-color;
+    }
+
+    &__list {
+        box-sizing: border-box;
+        position: absolute;
+        display: block;
+        padding: 10px 15px;
+        right: 10px;
+        top: 20px;
+        width: 100%;
+        min-width: 130px;
+        min-height: 150px;
+        background-color: $white-color;
+        transition: all .15s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 3;
+    }
+
+    &__list.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__text {
+        display: block;
+    }
+
+    &__item {
+        position: relative;
+        display: block;
+        list-style: none;
+    }
+
+    &__arrow-icon {
+        position: absolute;
+        top: -1px;
+        right: 0;
+        transform: rotate(90deg);
+    }
+
+    &__svg-arrow-icon {
+        fill: $main-light-grey-color;
+    }
+
+    &__link {
+        display: block;
+        font-size: 10px;
+        line-height: 28px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: $font--roboto;
+        font-weight: 400;
+        color: $main-light-grey-color;
+
+        &:hover {
+            color: $main-grey-color;
+            text-decoration: none;
+        }
+    }
+
+    &__item.active &__link {
+        color: $main-grey-color;
+    }
+}

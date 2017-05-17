@@ -1,3 +1,36 @@
 p {
     margin-bottom: 0;
 }
+
+.mCSB_draggerContainer {
+    z-index: 12;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+    z-index: 12;
+}
+
+.mCSB_scrollTools .mCSB_dragger {
+    z-index: 12;
+}
+
+.mCSB_scrollTools{
+    right:0!important;
+    left:auto!important;
+    z-index: 12!important;
+}
+
+.html {
+    transition: all .65s ease-in-out;
+}
+
+.hidden-html {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.active-html {
+    visibility: visible;
+    opacity: 1;
+}
+
