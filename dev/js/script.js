@@ -25,7 +25,7 @@ $(document).ready(function(){
         }
 
         var $primaryContentScroll = $('.js-primary-content-scroll');
-        $primaryContentScroll.height($('html').innerHeight() - 100);
+        $primaryContentScroll.innerHeight($('html').outerHeight(true));
         $primaryContentScroll.mCustomScrollbar({
             advanced:{
                 updateOnContentResize: true,
@@ -39,7 +39,7 @@ $(document).ready(function(){
         });
 
         var $secondaryContentScroll =  $('.js-secondary-content-scroll');
-        $secondaryContentScroll.height($('html').height() - 100);
+        $secondaryContentScroll.innerHeight($('html').innerHeight());
         $secondaryContentScroll.mCustomScrollbar({
             advanced:{
                 updateOnContentResize: true,
@@ -48,7 +48,7 @@ $(document).ready(function(){
         });
 
         var $primaryNavMenuScroll = $('.js-primary-nav-menu-container');
-        $primaryNavMenuScroll.height($('html').innerHeight() - 100);
+        $primaryNavMenuScroll.innerHeight($('html').innerHeight());
         $primaryNavMenuScroll.mCustomScrollbar({
             advanced:{
                 updateOnContentResize: true,
@@ -57,11 +57,16 @@ $(document).ready(function(){
         });
 
         function recalculateAndCheckDeviceWidth() {
+            var $html = $('.js-html');
+            var mobileWidth = 991;
+
             if ($(window).innerWidth() <= mobileWidth) {
 
-                $html.css('overflow', 'auto');
-                disableCustomScrollBar();
-                // setHeightComputedByContent();
+                $html.css({
+                    'overflow': 'auto', 'height': 'auto'
+                });
+
+                destroyCustomScrollbar();
 
                 var $mainPrimaryContentContainer = $('#content1');
                 var $contentPrimaryBody = $('.js-primary-content-body');
@@ -72,11 +77,11 @@ $(document).ready(function(){
                 var $cardInfoNews = $('.js-card-info-news');
                 var $cardInfoMeetup = $('.js-card-info-meetup');
 
-                $mainPrimaryContentContainer.height($contentPrimaryBody.height());
+                $mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true) + 80);
 
-                $mainSecondaryContentContainer.height($cardIstuTime.height() + $cardInfoNews.height() + $cardInfoMeetup.height());
+                $mainSecondaryContentContainer.outerHeight($cardIstuTime.outerHeight(true) + $cardInfoNews.outerHeight(true) + $cardInfoMeetup.outerHeight(true));
 
-                $(window).height($('html').height());
+                $(window).outerHeight($('html').outerHeight());
             }
         }
 
@@ -84,19 +89,18 @@ $(document).ready(function(){
 
         $(window).on('resize', debounce(function () {
             var $html = $('.js-html');
-            var mobileWidth = 768;
+            var mobileWidth = 991;
 
-            $(window).height($('html').height());
-
-            // setHeightOnContainersWithScrollbar();
-
-            // updateCustomScrollbar();
+            $(window).outerHeight($('html').outerHeight());
 
             if ($(window).innerWidth() <= mobileWidth) {
 
-                $html.css('overflow', 'auto');
-                disableCustomScrollBar();
-                // setHeightComputedByContent();
+                $html.css({
+                    'overflow': 'auto',
+                    'height': 'auto'
+                });
+
+                destroyCustomScrollbar();
 
                 var $mainPrimaryContentContainer = $('#content1');
                 var $contentPrimaryBody = $('.js-primary-content-body');
@@ -107,17 +111,18 @@ $(document).ready(function(){
                 var $cardInfoNews = $('.js-card-info-news');
                 var $cardInfoMeetup = $('.js-card-info-meetup');
 
-                $mainPrimaryContentContainer.height($contentPrimaryBody.height());
+                $mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true) + 80);
 
-                $mainSecondaryContentContainer.height( $cardIstuTime.height() + $cardInfoNews.height() + $cardInfoMeetup.height() );
+                $mainSecondaryContentContainer.outerHeight( $cardIstuTime.outerHeight(true) + $cardInfoNews.outerHeight(true) + $cardInfoMeetup.outerHeight(true) );
 
-                $(window).height($('html').height());
-                // destroyCustomScrollbar();
+                $(window).outerHeight($('html').outerHeight());
+
             } else {
 
                 $html.css('overflow', 'hidden');
-                // reinitCustomScrollbar();
-                updateCustomScrollbar();
+
+                reinitCustomScrollbar();
+                // updateCustomScrollbar();
                 setHeightOnContainersWithScrollbar();
             }
 
@@ -149,9 +154,9 @@ $(document).ready(function(){
         }
 
         function setHeightOnContainersWithScrollbar() {
-            $primaryContentScroll.height($('html').height() - 100);
-            $secondaryContentScroll.height($('html').height() - 100);
-            $primaryNavMenuScroll.height($('html').height() - 100);
+            $primaryContentScroll.outerHeight($('html').outerHeight(true));
+            $secondaryContentScroll.outerHeight($('html').outerHeight(true));
+            $primaryNavMenuScroll.outerHeight($('html').outerHeight(true));
         }
     });
 });
