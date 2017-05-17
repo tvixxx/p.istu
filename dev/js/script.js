@@ -74,9 +74,10 @@ $(document).ready(function(){
 
                 $mainPrimaryContentContainer.height($contentPrimaryBody.height());
 
-                $mainSecondaryContentContainer.height( $cardIstuTime.height() + $cardInfoNews.height() + $cardInfoMeetup.height() );
+                $mainSecondaryContentContainer.height($cardIstuTime.height() + $cardInfoNews.height() + $cardInfoMeetup.height());
 
                 $(window).height($('html').height());
+            }
         }
 
         recalculateAndCheckDeviceWidth();
