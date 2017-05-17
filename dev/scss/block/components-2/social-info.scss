@@ -34,6 +34,20 @@
             text-decoration: none;
             opacity: 1;
         }
+
+        &--is-tab {
+            cursor: pointer;
+        }
+
+        &--is-tab.active {
+            opacity: 1;
+            color: $white-color;
+
+            &:hover {
+                opacity: 1;
+                color: $white-color;
+            }
+        }
     }
 
     &__link-icon {

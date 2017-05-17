@@ -12,9 +12,28 @@
     background-color: $main-nav-menu-bg-color;
 
     &__main-info {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-bottom: 1px solid $border-contacts-divider-color;
+    }
+
+    &__addition-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__main-info + &__addition-info {
+        margin-top: 35px;
+    }
+
+    &__about {
+        box-sizing: border-box;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        padding-bottom: 40px;
     }
 
     &__logo {
@@ -33,6 +52,10 @@
         max-width: 170px;
     }
 
+    &__main-info + &__contacts-list {
+        margin-top: 30px;
+    }
+
     &__title {
         box-sizing: border-box;
         max-width: 100%;
@@ -43,5 +66,14 @@
 
     &__social-info {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    &__contacts-list {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
     }
 }

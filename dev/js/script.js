@@ -69,21 +69,23 @@ $(document).ready(function(){
         }
 
         var $primaryContentScroll = $('.js-primary-content-scroll');
-        $primaryContentScroll.height($('html').innerHeight() - 80);
+        $primaryContentScroll.height($('html').innerHeight() - 100);
         $primaryContentScroll.mCustomScrollbar({ advanced:{updateOnContentResize:true} });
 
         var $secondaryContentScroll =  $('.js-secondary-content-scroll');
-        $secondaryContentScroll.height($('html').height() - 80);
+        $secondaryContentScroll.height($('html').height() - 100);
         $secondaryContentScroll.mCustomScrollbar({ advanced:{updateOnContentResize:true} });
 
 
         $(window).on('resize', debounce(function () {
-            $('html').height($('html').height());
+            $(window).height($('html').height());
 
-            $primaryContentScroll.height($('html').height() - 80);
-            $secondaryContentScroll.height($('html').height() - 80);
+            $primaryContentScroll.height($('html').height() - 100);
+            $secondaryContentScroll.height($('html').height() - 100);
+
 
             $primaryContentScroll.mCustomScrollbar('update');
+            $secondaryContentScroll.mCustomScrollbar('update');
         }, 200));
     });
 });
