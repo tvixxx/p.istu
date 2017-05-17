@@ -1,4 +1,5 @@
 .primary-nav-menu {
+    box-sizing: border-box;
     position: relative;
     display: flex;
     max-width: 300px;
@@ -7,5 +8,40 @@
     height: auto;
     flex-direction: column;
     justify-content: flex-start;
+    padding: 30px;
     background-color: $main-nav-menu-bg-color;
+
+    &__main-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        width: 43px;
+        height: 72px;
+    }
+
+    &__logo-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__heading {
+        box-sizing: border-box;
+        position: relative;
+        max-width: 170px;
+    }
+
+    &__title {
+        box-sizing: border-box;
+        max-width: 100%;
+        word-spacing: 1px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    &__social-info {
+        position: relative;
+    }
 }

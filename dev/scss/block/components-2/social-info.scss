@@ -1,0 +1,64 @@
+.social-info {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    &__list-item {
+        list-style: none;
+    }
+
+    &__link {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        font-weight: 400;
+        color: $white-color;
+        font-size: 10px;
+        line-height: 20px;
+        text-transform: uppercase;
+        text-decoration: none;
+        opacity: .7;
+        z-index: 1;
+
+        &:hover {
+            color: $white-color;
+            text-decoration: none;
+            opacity: 1;
+        }
+    }
+
+    &__link-icon {
+        position: relative;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: $white-color;
+
+        &--vk {
+            width: 16px;
+            height: 10px;
+            background-image: url('../img/vk.png');
+        }
+
+        &--fb {
+            width: 6px;
+            height: 12px;
+            background-image: url('../svg/facebook.svg');
+        }
+
+        &--mail {
+            width: 14px;
+            height: 10px;
+            background-image: url('../img/mail.png');
+        }
+    }
+}
