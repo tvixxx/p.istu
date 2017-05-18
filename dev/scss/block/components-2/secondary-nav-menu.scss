@@ -59,11 +59,16 @@
     }
 
     &__item-icon {
+        display: none;
         position: absolute;
         top: 7px;
         left: 0;
         opacity: .3;
         transition: opacity .15s ease-in-out;
+
+        @include media-breakpoint-up(xl) {
+            display: block;
+        }
     }
 
     &__item-svg {
@@ -75,7 +80,10 @@
     &__item-link {
         box-sizing: border-box;
         position: relative;
-        padding-left: 25px;
+
+        @include media-breakpoint-up(xl) {
+            padding-left: 25px;
+        }
     }
 
     &__personal-account {

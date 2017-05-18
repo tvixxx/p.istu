@@ -56,42 +56,42 @@ $(document).ready(function(){
             }
         });
 
-        function recalculateAndCheckDeviceWidth() {
-            var $html = $('.js-html');
-            var mobileWidth = 991;
-
-            if ($(window).innerWidth() <= mobileWidth) {
-
-                $html.css({
-                    'overflow': 'auto', 'height': 'auto'
-                });
-
-                destroyCustomScrollbar();
-
-                var $mainPrimaryContentContainer = $('#content1');
-                var $contentPrimaryBody = $('.js-primary-content-body');
-
-                var $mainSecondaryContentContainer = $('#content2');
-                //TODO; use cycle for children in the container and calculate them height
-                var $cardIstuTime = $('.js-istu-time');
-                var $cardInfoNews = $('.js-card-info-news');
-                var $cardInfoMeetup = $('.js-card-info-meetup');
-
-                $mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true) + 80);
-
-                $mainSecondaryContentContainer.outerHeight($cardIstuTime.outerHeight(true) + $cardInfoNews.outerHeight(true) + $cardInfoMeetup.outerHeight(true));
-
-                $(window).outerHeight($('html').outerHeight());
-            }
-        }
-
-        recalculateAndCheckDeviceWidth();
+        // function recalculateAndCheckDeviceWidth() {
+        //     var $html = $('.js-html');
+        //     var mobileWidth = 991;
+        //
+        //     if ($(window).innerWidth() <= mobileWidth) {
+        //
+        //         $html.css({
+        //             'overflow': 'auto', 'height': 'auto'
+        //         });
+        //
+        //         destroyCustomScrollbar();
+        //
+        //         var $mainPrimaryContentContainer = $('#content1');
+        //         var $contentPrimaryBody = $('.js-primary-content-body');
+        //
+        //         var $mainSecondaryContentContainer = $('#content2');
+        //         //TODO; use cycle for children in the container and calculate them height
+        //         var $cardIstuTime = $('.js-istu-time');
+        //         var $cardInfoNews = $('.js-card-info-news');
+        //         var $cardInfoMeetup = $('.js-card-info-meetup');
+        //
+        //         $mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true));
+        //
+        //         $mainSecondaryContentContainer.outerHeight($cardIstuTime.outerHeight(true) + $cardInfoNews.outerHeight(true) + $cardInfoMeetup.outerHeight(true));
+        //
+        //         $(window).height($('html').height());
+        //     }
+        // }
+        //
+        // recalculateAndCheckDeviceWidth();
 
         $(window).on('resize', debounce(function () {
             var $html = $('.js-html');
             var mobileWidth = 991;
 
-            $(window).outerHeight($('html').outerHeight());
+            $(window).height($('html').height());
 
             if ($(window).innerWidth() <= mobileWidth) {
 
@@ -111,18 +111,19 @@ $(document).ready(function(){
                 var $cardInfoNews = $('.js-card-info-news');
                 var $cardInfoMeetup = $('.js-card-info-meetup');
 
-                $mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true) + 80);
+                $mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true));
+                console.log($mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true) - 100));
 
                 $mainSecondaryContentContainer.outerHeight( $cardIstuTime.outerHeight(true) + $cardInfoNews.outerHeight(true) + $cardInfoMeetup.outerHeight(true) );
 
-                $(window).outerHeight($('html').outerHeight());
+                $(window).height($('html').height());
 
             } else {
 
                 $html.css('overflow', 'hidden');
 
                 reinitCustomScrollbar();
-                // updateCustomScrollbar();
+                updateCustomScrollbar();
                 setHeightOnContainersWithScrollbar();
             }
 
