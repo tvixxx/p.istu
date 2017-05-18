@@ -31,7 +31,6 @@
             return Boolean($parent.find(innerListSelector).length);
         }
 
-
         $mainNavLink.on('click', function(e){
 
             //TODO
@@ -39,7 +38,6 @@
                 .filter(function(item) {
                     var $item = $(item);
 
-                    console.log($item);
                     if ($item.hasClass('active')) {
                         return true;
                     }
@@ -51,7 +49,6 @@
             var $parent = $this.parent();
             var active_class = 'active';
 
-            console.log(checkInnerList($this));
             if (!checkInnerList($this)) {
                 return;
             }
@@ -66,8 +63,6 @@
         });
 
         checkInnerList();
-
-
     })();
 
 })(window);

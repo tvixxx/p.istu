@@ -4,10 +4,13 @@ $(document).ready(function(){
         var $html = $('.js-html');
         var hidden_html = 'hidden-html';
         var active_html = 'active-html';
+        var activeCssStylesObj = {
+            'visibility': 'visible',
+            'opacity': '1'
+        };
 
         $html
-            .removeClass(hidden_html)
-            .addClass(active_html);
+            .css(activeCssStylesObj);
 
         function debounce(func, wait, immediate) {
             var timeout;
@@ -24,37 +27,59 @@ $(document).ready(function(){
             };
         }
 
-        var $primaryContentScroll = $('.js-primary-content-scroll');
-        $primaryContentScroll.innerHeight($('html').outerHeight(true));
-        $primaryContentScroll.mCustomScrollbar({
+        var defaultOptions = {
             advanced:{
                 updateOnContentResize: true,
-                autoUpdateTimeout: 200
+                    autoUpdateTimeout: 200
             },
             callbacks:{
                 onUpdate:function(){
-                    console.log("Scrollbars updated");
+                    // console.log("Scrollbars updated");
                 }
             }
-        });
+        };
 
+        var $primaryContentScroll = $('.js-primary-content-scroll');
         var $secondaryContentScroll =  $('.js-secondary-content-scroll');
-        $secondaryContentScroll.innerHeight($('html').innerHeight());
-        $secondaryContentScroll.mCustomScrollbar({
-            advanced:{
-                updateOnContentResize: true,
-                autoUpdateTimeout: 200
-            }
-        });
-
         var $primaryNavMenuScroll = $('.js-primary-nav-menu-container');
-        $primaryNavMenuScroll.innerHeight($('html').innerHeight());
-        $primaryNavMenuScroll.mCustomScrollbar({
-            advanced:{
-                updateOnContentResize: true,
-                autoUpdateTimeout: 200
-            }
-        });
+        var $istuNavFooter = $('.js-nav-istu-footer');
+
+        var istuNavFooterSelector = '.js-nav-istu-footer';
+
+        var $scrollBarsArray = [].concat($primaryContentScroll.toArray(), $secondaryContentScroll.toArray(), $primaryNavMenuScroll.toArray());
+
+        initScrollBars($scrollBarsArray, defaultOptions);
+
+        function initScrollBars($arrayScrolls, optionObj) {
+            var result = [];
+
+            return result = $arrayScrolls.map(function(item, index){
+
+                if (!item) return;
+
+                var $item = $(item);
+                var $parent = $item.parent();
+                var hasIstuFooterElem = Boolean($parent.find(istuNavFooterSelector).length);
+
+                var istuFooterElemHeight = null;
+
+                if (!hasIstuFooterElem) {
+                    $item
+                        .outerHeight($('html').outerHeight(true))
+                        .mCustomScrollbar(optionObj);
+
+                    return;
+                }
+
+                var $istuFooter = $parent.find(istuNavFooterSelector);
+
+                istuFooterElemHeight = $istuFooter.outerHeight(true);
+
+                $item
+                    .outerHeight($('html').outerHeight(true) - istuFooterElemHeight)
+                    .mCustomScrollbar(optionObj);
+            });
+        }
 
         // function recalculateAndCheckDeviceWidth() {
         //     var $html = $('.js-html');
@@ -72,10 +97,6 @@ $(document).ready(function(){
         //         var $contentPrimaryBody = $('.js-primary-content-body');
         //
         //         var $mainSecondaryContentContainer = $('#content2');
-        //         //TODO; use cycle for children in the container and calculate them height
-        //         var $cardIstuTime = $('.js-istu-time');
-        //         var $cardInfoNews = $('.js-card-info-news');
-        //         var $cardInfoMeetup = $('.js-card-info-meetup');
         //
         //         $mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true));
         //
@@ -91,73 +112,145 @@ $(document).ready(function(){
             var $html = $('.js-html');
             var mobileWidth = 991;
 
+            var cssObj = {
+                mobileCss: {
+                    'overflow': 'auto',
+                    'height': 'auto'
+                },
+                desktopCss: {
+                    'overflow': 'hidden'
+                }
+
+            };
+
             $(window).height($('html').height());
 
             if ($(window).innerWidth() <= mobileWidth) {
 
-                $html.css({
-                    'overflow': 'auto',
-                    'height': 'auto'
-                });
+                $html.css(cssObj.mobileCss);
 
                 destroyCustomScrollbar();
+                disableCustomScrollBar();
 
                 var $mainPrimaryContentContainer = $('#content1');
+                var $mainSecondaryContentContainer = $('#content2');
                 var $contentPrimaryBody = $('.js-primary-content-body');
 
-                var $mainSecondaryContentContainer = $('#content2');
-                //TODO; use cycle for children in the container and calculate them height
-                var $cardIstuTime = $('.js-istu-time');
-                var $cardInfoNews = $('.js-card-info-news');
-                var $cardInfoMeetup = $('.js-card-info-meetup');
+                $mainPrimaryContentContainer.outerHeight(  getHeightOfChildrenElem($contentPrimaryBody) );
 
-                $mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true));
-                console.log($mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true) - 100));
-
-                $mainSecondaryContentContainer.outerHeight( $cardIstuTime.outerHeight(true) + $cardInfoNews.outerHeight(true) + $cardInfoMeetup.outerHeight(true) );
+                $mainSecondaryContentContainer.outerHeight( getHeightOfChildrenElem($mainSecondaryContentContainer) );
 
                 $(window).height($('html').height());
 
             } else {
 
-                $html.css('overflow', 'hidden');
+                $html.css(cssObj.desktopCss);
 
-                reinitCustomScrollbar();
-                updateCustomScrollbar();
-                setHeightOnContainersWithScrollbar();
+
+                reinitCustomScrollbar($scrollBarsArray);
+                updateCustomScrollbar($scrollBarsArray);
+
+                initScrollBars($scrollBarsArray, defaultOptions);
+
+                // ($scrollBarsArray);
             }
 
         }, 200));
 
-        function updateCustomScrollbar() {
-            $primaryContentScroll.mCustomScrollbar('update');
-            $secondaryContentScroll.mCustomScrollbar('update');
-            $primaryNavMenuScroll.mCustomScrollbar('update');
+        function getHeightOfChildrenElem($target) {
+
+            if (!$target) return;
+
+            var result = null; // final result
+            var $childrenElemsContent = []; // temp array for children elements of parent elem
+
+            $childrenElemsContent = $target.children().toArray(); // to.Array() because at the beginning children return HTML collection
+
+            var $childrenArrSecondaryContent = $childrenElemsContent.map(function(item, index){
+                var $item = $(item);
+
+                return $item.outerHeight(true);
+            });
+
+            var $childrenHeight = $childrenArrSecondaryContent.reduce(function(sum, current){
+
+                return sum + current;
+            });
+
+            result = $childrenHeight;
+
+            return result;
         }
 
-        function reinitCustomScrollbar() {
-            $primaryContentScroll.mCustomScrollbar();
-            $secondaryContentScroll.mCustomScrollbar();
-            $primaryNavMenuScroll.mCustomScrollbar();
+        function updateCustomScrollbar($arrayScrollbars) {
+
+            var result = [];
+
+            return result = $arrayScrollbars.map(function(item, index){
+
+                if (!item) return;
+
+                var $item = $(item);
+
+                $item.mCustomScrollbar('update');
+            });
+        }
+
+        function reinitCustomScrollbar($arrayScrollbars) {
+
+            var result = [];
+
+            return result = $arrayScrollbars.map(function(item, index){
+
+                if (!item) return;
+
+                var $item = $(item);
+
+                $item.mCustomScrollbar();
+            });
         }
 
 
-        function destroyCustomScrollbar() {
-            $primaryContentScroll.mCustomScrollbar('destroy');
-            $secondaryContentScroll.mCustomScrollbar('destroy');
-            $primaryNavMenuScroll.mCustomScrollbar('destroy');
+        function destroyCustomScrollbar($arrayScrollbars) {
+
+            var result = [];
+
+            return result = $arrayScrollbars.map(function(item, index){
+
+                if (!item) return;
+
+                var $item = $(item);
+
+                $item.mCustomScrollbar('destroy');
+            });
         }
 
-        function disableCustomScrollBar() {
-            $primaryContentScroll.mCustomScrollbar("disable",true);
-            $secondaryContentScroll.mCustomScrollbar("disable",true);
-            $primaryNavMenuScroll.mCustomScrollbar("disable",true);
+        function disableCustomScrollBar($arrayScrollbars) {
+
+            var result = [];
+
+            return result = $arrayScrollbars.map(function(item, index){
+
+                if (!item) return;
+
+                var $item = $(item);
+
+                $item.mCustomScrollbar("disable",true);
+            });
         }
 
-        function setHeightOnContainersWithScrollbar() {
-            $primaryContentScroll.outerHeight($('html').outerHeight(true));
-            $secondaryContentScroll.outerHeight($('html').outerHeight(true));
-            $primaryNavMenuScroll.outerHeight($('html').outerHeight(true));
+        function setHeightOnContainersWithScrollbar($arrayScrollbars) {
+
+            var result = [];
+
+            return result = $arrayScrollbars.map(function(item, index){
+
+                if (!item) return;
+
+                var $item = $(item);
+
+                $item.outerHeight($('html').outerHeight(true));
+            });
         }
     });
 });

@@ -1,14 +1,13 @@
 .primary-nav-menu {
     box-sizing: border-box;
     position: relative;
-    display: inline-block;
-    //display: flex;
+    display: flex;
     max-width: 300px;
     min-width: 300px;
     width: 100%;
     height: auto;
-    //flex-direction: column;
-    //justify-content: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
     padding: 30px;
     background-color: $main-nav-menu-bg-color;
 
@@ -29,12 +28,19 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        border-bottom: 1px solid $border-contacts-divider-color;
+        border-bottom: 1px solid $border-nav-menu-divider-color;
     }
 
     &__addition-info {
         display: flex;
+        height: 100%;
         flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__addition-footer {
+        position: relative;
+        bottom: 0;
     }
 
     &__main-info + &__addition-info {
