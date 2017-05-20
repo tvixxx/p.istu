@@ -1,13 +1,27 @@
 $(document).ready(function(){
 
     $(window).on("load",function(){
+
+        // vanilla JS
+        var html = document.documentElement;
+        var body = document.body;
+        var minimalScrollOffsetFromTop = 5;
+
+        var scrollTop = html.scrollTop || body && body.scrollTop || 0;
+        scrollTop -= html.clientTop; // в IE7- <html> смещён относительно (0,0)
+
+        if ( scrollTop >= minimalScrollOffsetFromTop) {
+            scrollToZeroCoordinate();
+        }
+
+        // jQuery html
         var $html = $('.js-html');
-        var hidden_html = 'hidden-html';
-        var active_html = 'active-html';
-        var activeCssStylesObj = {
-            'visibility': 'visible',
-            'opacity': '1'
+
+        var sizesObject = {
+            header: 70,
+            mobileWidth: 991
         };
+
         var cssObj = {
             mobileCss: {
                 'overflow': 'auto',
@@ -15,13 +29,35 @@ $(document).ready(function(){
             },
             desktopCss: {
                 'overflow': 'hidden'
+            },
+            activeStyles: {
+                'visibility': 'visible',
+                'opacity': '1'
+            },
+            heightValues: {
+                oneHundredPercents: 100
             }
-
         };
 
+        var defaultOptions = {
+            scrollInertia: 0,
+            live: 'on',
+            mouseWheel: {
+                scrollAmount: 80
+            },
+            advanced:{
+                updateOnContentResize: true,
+                autoUpdateTimeout: 200
+            },
+            callbacks:{
+                onUpdate:function(){
+                    // console.log("Scrollbars updated");
+                }
+            }
+        };
 
         $html
-            .css(activeCssStylesObj);
+            .css(cssObj.activeStyles);
 
         function debounce(func, wait, immediate) {
             var timeout;
@@ -38,32 +74,23 @@ $(document).ready(function(){
             };
         }
 
-        var defaultOptions = {
-            advanced:{
-                updateOnContentResize: true,
-                    autoUpdateTimeout: 200
-            },
-            callbacks:{
-                onUpdate:function(){
-                    // console.log("Scrollbars updated");
-                }
-            }
-        };
-
         var $primaryContentScroll = $('.js-primary-content-scroll');
         var $secondaryContentScroll =  $('.js-secondary-content-scroll');
         var $primaryNavMenuScroll = $('.js-primary-nav-menu-container');
-        var $istuNavFooter = $('.js-nav-istu-footer');
-
         var istuNavFooterSelector = '.js-nav-istu-footer';
 
-        var $scrollBarsArray = [].concat($primaryContentScroll.toArray(), $secondaryContentScroll.toArray(), $primaryNavMenuScroll.toArray());
+        var $scrollBarsArray = [].concat(
+            $primaryContentScroll.toArray(),
+            $secondaryContentScroll.toArray(),
+            $primaryNavMenuScroll.toArray()
+        );
 
         initScrollBars($scrollBarsArray, defaultOptions);
 
+        checkMobileAndUpdateCustomScrollbars();
+
         function initScrollBars($arrayScrolls, optionObj) {
             var result = [];
-            var headerHeight = 70;
 
             return result = $arrayScrolls.map(function(item, index){
 
@@ -72,18 +99,18 @@ $(document).ready(function(){
                 var $item = $(item);
                 var $parent = $item.parent();
                 var hasIstuFooterElem = Boolean($parent.find(istuNavFooterSelector).length);
-
+                var $istuFooter = null;
                 var istuFooterElemHeight = null;
 
                 if (!hasIstuFooterElem) {
                     $item
-                        .outerHeight($('html').outerHeight(true) - headerHeight)
+                        .outerHeight($('html').outerHeight(true) - sizesObject.header)
                         .mCustomScrollbar(optionObj);
 
                     return;
                 }
 
-                var $istuFooter = $parent.find(istuNavFooterSelector);
+                $istuFooter = $parent.find(istuNavFooterSelector);
 
                 istuFooterElemHeight = $istuFooter.outerHeight(true);
 
@@ -93,75 +120,78 @@ $(document).ready(function(){
             });
         }
 
-        // function recalculateAndCheckDeviceWidth() {
-        //     var $html = $('.js-html');
-        //     var mobileWidth = 991;
-        //
-        //     if ($(window).innerWidth() <= mobileWidth) {
-        //
-        //         $html.css({
-        //             'overflow': 'auto', 'height': 'auto'
-        //         });
-        //
-        //         destroyCustomScrollbar();
-        //
-        //         var $mainPrimaryContentContainer = $('#content1');
-        //         var $contentPrimaryBody = $('.js-primary-content-body');
-        //
-        //         var $mainSecondaryContentContainer = $('#content2');
-        //
-        //         $mainPrimaryContentContainer.outerHeight($contentPrimaryBody.outerHeight(true));
-        //
-        //         $mainSecondaryContentContainer.outerHeight($cardIstuTime.outerHeight(true) + $cardInfoNews.outerHeight(true) + $cardInfoMeetup.outerHeight(true));
-        //
-        //         $(window).height($('html').height());
-        //     }
-        // }
-        //
-        // recalculateAndCheckDeviceWidth();
-
         $(window).on('resize', debounce(function () {
-            var $html = $('.js-html');
-            var mobileWidth = 991;
 
-            $(window).height($('html').height());
+            initScrollBars($scrollBarsArray, defaultOptions);
 
-            if ($(window).innerWidth() <= mobileWidth) {
+            checkMobileAndUpdateCustomScrollbars();
 
-                initScrollBars($scrollBarsArray, defaultOptions);
-                checkMobileAndUpdateCustomScrollbars();
+        }, 200));
+
+        function checkMobileAndUpdateCustomScrollbars() {
+            var $mainPageContainer = $('.js-main-page');
+            var $mainPrimaryContentContainer = $('#content1');
+            var $mainSecondaryContentContainer = $('#content2');
+            var $contentPrimaryBody = $('.js-primary-content-body');
+
+            if ($(window).innerWidth() <= sizesObject.mobileWidth) {
+
+                $html.css(cssObj.mobileCss);
+
+                // disableCustomScrollBar($scrollBarsArray);
+                destroyCustomScrollbar($scrollBarsArray);
+
+                $primaryContentScroll.mCustomScrollbar("disable",true);
+                $secondaryContentScroll.mCustomScrollbar("disable",true);
+                $primaryNavMenuScroll.mCustomScrollbar("disable",true);
+
+                // var $mainPageContainer = $('.js-main-page');
+                // var $mainPrimaryContentContainer = $('#content1');
+                // var $mainSecondaryContentContainer = $('#content2');
+                // var $contentPrimaryBody = $('.js-primary-content-body');
+                var resultHeader = null;
+                var extraPadding = 1.5;
+
+                setTimeout(function(){
+                    disableCustomScrollBar($scrollBarsArray);
+                }, 200);
+
+                $mainPrimaryContentContainer.outerHeight(  getHeightOfChildrenElem($contentPrimaryBody) );
+
+                $mainSecondaryContentContainer.outerHeight( getHeightOfChildrenElem($mainSecondaryContentContainer));
+
+                resultHeader = $mainPrimaryContentContainer.outerHeight(true) + $mainSecondaryContentContainer.outerHeight(true);
+
+                $mainPageContainer.find(istuNavFooterSelector).height('auto');
+
+                $primaryNavMenuScroll.css('height', cssObj.heightValues.oneHundredPercents + '%');
+
+                $('html').outerHeight(resultHeader);
+
+                resultHeader = 0;
+
             } else {
 
                 $html.css(cssObj.desktopCss);
 
-                reinitCustomScrollbar($scrollBarsArray);
-                updateCustomScrollbar($scrollBarsArray);
-                initScrollBars($scrollBarsArray, defaultOptions);
+                scrollToZeroCoordinate();
 
-                // ($scrollBarsArray);
+                $mainPrimaryContentContainer.outerHeight(  $(window).height() - sizesObject.header );
+
+                $mainSecondaryContentContainer.outerHeight( $(window).height() - sizesObject.header );
+
+                $primaryNavMenuScroll.outerHeight($(window).height() - (sizesObject.header * 2));
+
+                setTimeout(function(){
+                    updateCustomScrollbar($scrollBarsArray);
+                }, 200);
+
+                // $('html').outerHeight();
             }
+        }
 
-        }, 200));
-
-        checkMobileAndUpdateCustomScrollbars();
-
-        function checkMobileAndUpdateCustomScrollbars() {
-            $html.css(cssObj.mobileCss);
-
-            destroyCustomScrollbar();
-            disableCustomScrollBar();
-            debugger;
-
-            var $mainPrimaryContentContainer = $('#content1');
-            var $mainSecondaryContentContainer = $('#content2');
-            var $contentPrimaryBody = $('.js-primary-content-body');
-            var headerHeight = 70;
-
-            $mainPrimaryContentContainer.outerHeight(  getHeightOfChildrenElem($contentPrimaryBody) - headerHeight );
-
-            $mainSecondaryContentContainer.outerHeight( getHeightOfChildrenElem($mainSecondaryContentContainer) - headerHeight );
-
-            $(window).height($('html').height());
+        function scrollToZeroCoordinate(){
+            window.scrollTo(0,0);
         }
 
         function getHeightOfChildrenElem($target) {

@@ -33,7 +33,8 @@
 
         $mainNavLink.on('click', function(e){
 
-            //TODO
+            //TODO: Close on next tab which have inner list items
+
             var filteredLink = $itemOfListContainer
                 .filter(function(item) {
                     var $item = $(item);
@@ -42,8 +43,6 @@
                         return true;
                     }
                 });
-
-            console.info(filteredLink);
 
             var $this = $(this);
             var $parent = $this.parent();

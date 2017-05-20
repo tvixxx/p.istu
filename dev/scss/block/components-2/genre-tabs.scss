@@ -42,6 +42,7 @@
         visibility: hidden;
         opacity: 0;
         z-index: 3;
+        box-shadow: 0 2px 5px 0 rgba(74, 74, 74, .4);
     }
 
     &__list.active {
