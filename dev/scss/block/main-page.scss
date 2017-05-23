@@ -80,16 +80,30 @@ body, html {
     }
 
     &__content {
-        box-sizing: border-box;
-        position: relative;
         display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: calc(100% - 300px);
-        height: auto;
+        justify-content: center;
         background-color: $main-page-inner-bg-color;
         box-shadow: 0 2px 5px 0 rgba(74,74,74, .1);
+
+        @media screen and (min-width: 768px) {
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: calc(100% - 300px);
+            height: auto;
+        }
+    }
+
+    &__mobile-primary-nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 45px;
+        width: 100%;
+        z-index: 15;
     }
 
     &__footer {

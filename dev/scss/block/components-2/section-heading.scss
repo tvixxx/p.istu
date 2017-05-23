@@ -1,7 +1,11 @@
 .section-heading {
-    font-size: 21px;
+    font-size: 18px;
     line-height: 30px;
     font-family: $font--roboto;
     font-weight: 300;
     letter-spacing: -0.036em;
+
+    @media screen and (min-width: 768px) {
+        font-size: 21px;
+    }
 }
