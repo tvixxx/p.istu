@@ -27,11 +27,18 @@
         border-bottom: 1px solid $border-card-divider;
     }
 
-    &__heading-text {
+    & &__heading-text {
+        max-width: 80%;
+        line-height: 20px;
 
+
+        @media screen and (min-width: 400px) {
+            max-width: 100%;
+        }
     }
 
     &__archive-news {
+        position: relative;
         display: inline-block;
         color: $main-light-grey-color;
     }
@@ -49,6 +56,22 @@
         &:hover {
             opacity: .7;
         }
+
+        &--desktop {
+            display: none;
+
+            @media screen and (min-width: 768px) {
+                display: inline-block;
+            }
+        }
+
+        &--mobile {
+            display: inline-block;
+
+            @media screen and (min-width: 768px) {
+                display: none;
+            }
+        }
     }
 
     &__archive-text:hover + &__arrow-icon {
@@ -56,17 +79,27 @@
     }
 
     &__archive-text + &__arrow-icon {
-        margin-left: 14px;
+        margin-left: 0;
+
+        @media screen and (min-width: 768px) {
+            margin-left: 14px;
+        }
     }
 
     &__arrow-icon {
-        display: inline-block;
-        vertical-align: middle;
+        position: absolute;
+        top: 50%;
+        right: -10px;
         width: 3px;
         height: 6px;
         margin-top: -1px;
         opacity: 1;
         transition: all .15s ease-in-out;
+
+        @media screen and (min-width: 768px) {
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
 
     &__svg-arrow-icon {

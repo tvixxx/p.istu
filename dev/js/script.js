@@ -139,11 +139,11 @@ $(document).ready(function(){
                 $html.css(cssObj.mobileCss);
 
                 // disableCustomScrollBar($scrollBarsArray);
-                destroyCustomScrollbar($scrollBarsArray);
+                // destroyCustomScrollbar($scrollBarsArray);
 
-                $primaryContentScroll.mCustomScrollbar("disable",true);
-                $secondaryContentScroll.mCustomScrollbar("disable",true);
-                $primaryNavMenuScroll.mCustomScrollbar("disable",true);
+                $primaryContentScroll.mCustomScrollbar("destroy");
+                $secondaryContentScroll.mCustomScrollbar("destroy");
+                // $primaryNavMenuScroll.mCustomScrollbar("disable",true);
 
                 // var $mainPageContainer = $('.js-main-page');
                 // var $mainPrimaryContentContainer = $('#content1');
@@ -152,9 +152,9 @@ $(document).ready(function(){
                 var resultHeader = null;
                 var extraPadding = 1.5;
 
-                setTimeout(function(){
-                    disableCustomScrollBar($scrollBarsArray);
-                }, 200);
+                // setTimeout(function(){
+                //     disableCustomScrollBar($scrollBarsArray);
+                // }, 200);
 
                 $mainPrimaryContentContainer.outerHeight(  getHeightOfChildrenElem($contentPrimaryBody) );
 

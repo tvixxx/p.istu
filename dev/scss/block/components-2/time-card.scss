@@ -16,6 +16,10 @@
         flex-direction: column;
         padding: 10px;
 
+        @media screen and (min-width: 400px) {
+            padding: 20px;
+        }
+
         @include media-breakpoint-up(lg) {
             padding: 25px 15px;
         }
@@ -49,8 +53,13 @@
     }
 
     &__time-icon {
+        display: none;
         width: 30px;
         height: 30px;
+
+        @media screen and (min-width: 400px) {
+            display: block;
+        }
 
         @include media-breakpoint-up(lg) {
             display: none;
@@ -71,7 +80,11 @@
     }
 
     &__time-icon + &__istu-time {
-        margin-left: 20px;
+        margin-left: 0;
+
+        @media screen and (min-width: 400px) {
+            margin-left: 20px;
+        }
 
         @include media-breakpoint-up(lg) {
             margin-left: 0;
@@ -83,19 +96,23 @@
     }
 
     &__istu-time {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 1;
         font-weight: 300;
         color: $main-grey-color;
         text-decoration: none;
         transition: all .15s ease-in-out;
 
-        @include media-breakpoint-up(md) {
+        @media screen and (min-width: 400px) {
+            font-size: 20px;
+        }
 
+        @media screen and (min-width: 768px) {
+            font-size: 26px;
         }
 
         @include media-breakpoint-up(lg) {
-            font-size: 23px;
+            font-size: 24px;
         }
 
 
@@ -111,12 +128,17 @@
 
     &__istu-week {
         width: 100%;
-        max-width: 150px;
-        font-size: 11px;
+        max-width: 140px;
+        font-size: 10px;
         line-height: 19px;
         font-weight: 500;
         text-transform: uppercase;
         color: $main-light-grey-color;
+
+        @media screen and (min-width: 400px) {
+            max-width: 150px;
+            font-size: 11px;
+        }
 
         @include media-breakpoint-up(lg) {
             max-width: 130px;
@@ -137,7 +159,11 @@
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
-        padding-top: 27px;
+        padding-top: 20px;
+
+        @media screen and (min-width: 400px) {
+            padding-top: 25px;
+        }
 
         @include media-breakpoint-up(lg) {
             padding-top: 22px;
@@ -155,7 +181,12 @@
     }
 
     &__time-icon + &__lesson-now-time {
-        margin-left: 12px;
+        margin-left: 0;
+
+        @media screen and (min-width: 400px) {
+            margin-left: 12px;
+        }
+
 
         @include media-breakpoint-up(lg) {
             margin-left: 0;
@@ -167,23 +198,32 @@
     }
 
     &__lesson-now-time {
-        font-size: 11px;
+        font-size: 10px;
         line-height: 1;
         padding-top: 5px;
         color: $main-light-grey-color;
         font-weight: 500;
+
+        @media screen and (min-width: 400px) {
+            font-size: 11px;
+        }
     }
 
     &__end-text {
         box-sizing: border-box;
         width: 100%;
-        max-width: 150px;
-        font-size: 11px;
+        max-width: 145px;
+        font-size: 10px;
         font-weight: 500;
         line-height: 18px;
         text-align: left;
         text-transform: uppercase;
         color: $main-grey-color;
+
+        @media screen and (min-width: 400px) {
+            font-size: 11px;
+            max-width: 150px;
+        }
 
         @include media-breakpoint-up(lg) {
             max-width: 130px;

@@ -28,10 +28,9 @@
         }
 
         &:last-of-type {
-            padding-bottom: 0;
+            padding-bottom: 20px;
 
             @include media-breakpoint-up(lg) {
-                padding-bottom: 20px;
             }
         }
 

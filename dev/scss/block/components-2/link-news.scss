@@ -1,3 +1,4 @@
+$link-news-font-size-mobile: 13px;
 $link-news-font-size: 14px;
 $link-news-line-height: 28px;
 $link-news-border-bottom: 1px solid rgba(76, 89, 137, .15);
@@ -5,7 +6,7 @@ $link-news-border-bottom: 1px solid rgba(76, 89, 137, .15);
 .link-news {
     position: relative;
     display: block;
-    font-size: $link-news-font-size;
+    font-size: $link-news-font-size-mobile;
     line-height: $link-news-line-height;
     color: $link-light-blue-color;
     text-decoration: underline;
@@ -16,5 +17,9 @@ $link-news-border-bottom: 1px solid rgba(76, 89, 137, .15);
     &:hover {
         color: $main-grey-color;
         text-decoration: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: $link-news-font-size;
     }
 }

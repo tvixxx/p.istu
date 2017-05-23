@@ -11,8 +11,12 @@ $horizontal-gutter: 30px;
     flex: 1 100%;
     width: 100%;
     max-width: 100%;
-    padding: $vertical-gutter $horizontal-gutter;
+    padding: 70px $horizontal-gutter $vertical-gutter;
     order: 0;
+
+    @media screen and (min-width: 768px) {
+        padding: $vertical-gutter $horizontal-gutter;
+    }
 
     @include media-breakpoint-up(lg) {
         width: 50%;
