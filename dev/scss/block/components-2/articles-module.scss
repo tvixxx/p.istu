@@ -16,6 +16,17 @@
         flex-wrap: nowrap;
     }
 
+    &__container {
+        position: relative;
+        height: 100%;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        padding-bottom: 40px;
+    }
+
     &__item {
         list-style: none;
 
@@ -29,14 +40,10 @@
     }
 
     &__btn-wrapper {
-        //display: flex;
         display: block;
         text-align: center;
         width: 100%;
         max-width: 800px;
-        //padding-bottom: 50px;
-        //flex-direction: row;
-        //justify-content: center;
 
         @include media-breakpoint-up(lg) {
             padding-bottom: 50px;

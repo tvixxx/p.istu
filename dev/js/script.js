@@ -130,32 +130,20 @@ $(document).ready(function(){
 
         function checkMobileAndUpdateCustomScrollbars() {
             var $mainPageContainer = $('.js-main-page');
-            var $mainPrimaryContentContainer = $('#content1');
-            var $mainSecondaryContentContainer = $('#content2');
+            var $mainPrimaryContentContainer = $('.js-primary-content-scroll');
+            var $mainSecondaryContentContainer = $('.js-secondary-content-scroll');
             var $contentPrimaryBody = $('.js-primary-content-body');
 
             if ($(window).innerWidth() <= sizesObject.mobileWidth) {
 
                 $html.css(cssObj.mobileCss);
-
-                // disableCustomScrollBar($scrollBarsArray);
-                // destroyCustomScrollbar($scrollBarsArray);
-
+                
                 $primaryContentScroll.mCustomScrollbar("destroy");
                 $secondaryContentScroll.mCustomScrollbar("destroy");
-                // $primaryNavMenuScroll.mCustomScrollbar("disable",true);
-
-                // var $mainPageContainer = $('.js-main-page');
-                // var $mainPrimaryContentContainer = $('#content1');
-                // var $mainSecondaryContentContainer = $('#content2');
-                // var $contentPrimaryBody = $('.js-primary-content-body');
+        
                 var resultHeader = null;
                 var extraPadding = 1.5;
-
-                // setTimeout(function(){
-                //     disableCustomScrollBar($scrollBarsArray);
-                // }, 200);
-
+                
                 $mainPrimaryContentContainer.outerHeight(  getHeightOfChildrenElem($contentPrimaryBody) );
 
                 $mainSecondaryContentContainer.outerHeight( getHeightOfChildrenElem($mainSecondaryContentContainer));
@@ -185,8 +173,6 @@ $(document).ready(function(){
                 setTimeout(function(){
                     updateCustomScrollbar($scrollBarsArray);
                 }, 200);
-
-                // $('html').outerHeight();
             }
         }
 

@@ -16,6 +16,10 @@
             overflow: hidden;
             background-color: $placeholder-bg-color;
         }
+
+        & + & {
+            margin-top: 30px;
+        }
     }
 
     &__preview-img {
@@ -38,6 +42,10 @@
         @include media-breakpoint-up(lg) {
 
         }
+    }
+
+    &__time-info + &__description {
+        margin-top: 20px;
     }
 
     &__time-info {
