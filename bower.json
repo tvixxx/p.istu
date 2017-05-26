@@ -10,6 +10,7 @@
     "bootstrap-sass": "*",
     "bootstrap": "v4.0.0-alpha.6",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
-    "perfect-scrollbar": "^0.7.0"
+    "perfect-scrollbar": "^0.7.0",
+    "echojs": "^1.7.3"
   }
 }

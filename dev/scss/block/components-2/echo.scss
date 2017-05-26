@@ -1,0 +1,13 @@
+.echo {
+    transition: all .5s ease-in-out;
+}
+
+.echo-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.echo-loaded {
+    opacity: 1;
+    visibility: visible;
+}
