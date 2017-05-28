@@ -133,30 +133,37 @@ $(document).ready(function(){
             var $mainPrimaryContentContainer = $('.js-primary-content-scroll');
             var $mainSecondaryContentContainer = $('.js-secondary-content-scroll');
             var $contentPrimaryBody = $('.js-primary-content-body');
+            var $primaryContentArticlesSelector = '.primary-content__content';
 
             if ($(window).innerWidth() <= sizesObject.mobileWidth) {
 
                 $html.css(cssObj.mobileCss);
-                
+
                 $primaryContentScroll.mCustomScrollbar("destroy");
                 $secondaryContentScroll.mCustomScrollbar("destroy");
-        
-                var resultHeader = null;
-                var extraPadding = 1.5;
-                
-                $mainPrimaryContentContainer.outerHeight(  getHeightOfChildrenElem($contentPrimaryBody) );
 
-                $mainSecondaryContentContainer.outerHeight( getHeightOfChildrenElem($mainSecondaryContentContainer));
+                var resultHeight = null;
 
-                resultHeader = $mainPrimaryContentContainer.outerHeight(true) + $mainSecondaryContentContainer.outerHeight(true);
+                $mainPrimaryContentContainer
+                    .height( $contentPrimaryBody
+                        .parent($primaryContentArticlesSelector)
+                        .outerHeight()
+                    );
 
-                $mainPageContainer.find(istuNavFooterSelector).height('auto');
+                $mainSecondaryContentContainer
+                    .height(getHeightOfChildrenElem($mainSecondaryContentContainer));
+
+                resultHeight = $mainPrimaryContentContainer.outerHeight(true) + $mainSecondaryContentContainer.outerHeight(true);
+
+                $mainPageContainer
+                    .find(istuNavFooterSelector)
+                    .height('auto');
 
                 $primaryNavMenuScroll.css('height', cssObj.heightValues.oneHundredPercents + '%');
 
-                $('html').outerHeight(resultHeader);
+                $('html').height(resultHeight);
 
-                resultHeader = 0;
+                resultHeight = 0;
 
             } else {
 

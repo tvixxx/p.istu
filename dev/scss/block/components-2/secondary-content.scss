@@ -11,7 +11,7 @@ $horizontal-gutter: 30px;
     flex: 1 100%;
     width: 100%;
     max-width: 100%;
-    padding: 70px $horizontal-gutter $vertical-gutter;
+    padding: 70px $horizontal-gutter $vertical-gutter 0;
     order: 0;
 
     @media screen and (min-width: 768px) {

@@ -9,7 +9,7 @@
 
 
     &:last-of-type {
-        margin-bottom: 50px;
+        margin-bottom: 10px;
     }
 
     & + & {
@@ -150,6 +150,64 @@
         position: relative;
     }
 
+    &--program &__category {
+        display: block;
+    }
+
+    &__category + &__title {
+        margin-top: 15px;
+    }
+
+    &--program &__category-name {
+        font-size: 14px;
+        line-height: 1;
+        color: $main-light-grey-color;
+        text-transform: uppercase;
+    }
+
+    &--program &__title {
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    &__title + &__information-module {
+        margin-top: 20px;
+    }
+
+    &__info-list {
+        display: block;
+    }
+
+    &__info-item {
+        display: block;
+        list-style: none;
+
+        & + & {
+            margin-top: 20px;
+        }
+    }
+
+    &__item-title {
+        display: block;
+        line-height: 1.2;
+        color: $main-grey-color;
+    }
+
+    &__item-title + &__item-description {
+        margin-top: 10px;
+    }
+
+    &__item-description {
+        display: block;
+        line-height: 1.2;
+        color: $main-light-grey-color;
+
+        & + & {
+            margin-top: 10px;
+        }
+    }
+
     &--news {
 
     }
@@ -157,4 +215,10 @@
     &--meetup {
 
     }
+
+    &--program {
+        border-top: 5px solid $main-grey-color;
+    }
+
+
 }
