@@ -13,5 +13,8 @@
     "perfect-scrollbar": "^0.7.0",
     "echojs": "^1.7.3",
     "jquery_lazyload": "jquery.lazyload#^1.9.7"
+  },
+  "dependencies": {
+    "lazysizes": "^3.0.0"
   }
 }
