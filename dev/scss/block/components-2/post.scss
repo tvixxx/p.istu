@@ -9,12 +9,12 @@
         overflow: hidden;
 
         &:before {
-            //display: block;
-            //content: '';
-            //width: 100%;
-            //padding-bottom: 62.5%;
-            //overflow: hidden;
-            //background-color: $placeholder-bg-color;
+            display: block;
+            content: '';
+            width: 100%;
+            padding-bottom: 62.5%;
+            overflow: hidden;
+            background-color: $placeholder-bg-color;
         }
 
         & + & {
@@ -23,7 +23,7 @@
     }
 
     &__preview-img {
-        position: relative;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
