@@ -1,0 +1,15 @@
+.content-description {
+    box-sizing: border-box;
+    display: block;
+
+    &__text {
+        font-size: 14px;
+        line-height: 1.5;
+        color: $main-grey-color;
+
+        & + & {
+            margin-top: 20px;
+        }
+    }
+
+}

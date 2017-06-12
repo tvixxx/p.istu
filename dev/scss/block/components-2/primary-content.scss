@@ -73,6 +73,9 @@ $horizontal-gutter: 30px;
 
     &__breadcrumbs {
         display: block;
-        margin-bottom: 30px;
+
+        & > ul {
+            margin-bottom: 30px;
+        }
     }
 }
